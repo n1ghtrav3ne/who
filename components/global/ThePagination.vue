@@ -17,8 +17,8 @@ const emit=defineEmits<{
     based on current value and group size
 */
 const buttonRange = computed(() => {
-    const start = Math.max(1, Math.min(props.current-1,props.count-props.groupSize+1));
-    const end = Math.min(start+props.groupSize-1,props.count);
+    const start=Math.max(1,Math.min(props.current-1,props.count-props.groupSize+1));
+    const end=Math.min(start+props.groupSize-1,props.count);
     
     return Array.from({length:end-start+1},(_,i)=>start+i);
 });
@@ -35,7 +35,6 @@ const changeIndex=(i:number)=>{
 
     emit("update:current",i);
     emit("change",i);
-    
 }
 </script>
 
