@@ -3,7 +3,9 @@
 </script>
 
 <template>
-
+  <div class="mt-10">
+    <TheInput variant="bordered" placeholder="test" />
+  </div>
 </template>
 
 <style>

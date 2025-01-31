@@ -1,12 +1,14 @@
 <script setup lang="ts">
+import type { InputTypes, Variant } from '~/types/Input';
 // import VsxIcon from "vue-iconsax";
 
-type Variant="bordered"|"underline";
-
-const props=defineProps<{
+const props=withDefaults(defineProps<{
     variant:Variant,
-    placeholder:string
-}>();
+    placeholder:string,
+    type?:InputTypes
+}>(),{
+    type:"text"
+});
 
 const emits=defineEmits<{
     (event:'update:modelValue',value:string):void
@@ -19,11 +21,16 @@ const change=(event:Event)=>{
 </script>
 
 <template>
-    <div v-if="variant=='underline'" class="flex">
+    <div class="flex">
         <div class="grow">
             <input
-                class="border-b border-b-black w-full outline-none p-2"
-                type="text" 
+                class="w-full outline-none p-2"
+                :class="{
+                    'border-b border-b-black':variant=='underline',
+                    'border border-black':variant=='bordered'
+                }"
+
+                :type="type" 
                 :placeholder="placeholder"
 
                 @change="change"
@@ -31,17 +38,7 @@ const change=(event:Event)=>{
         </div>
 
         <div>
-            <!-- ICON -->
+            <!-- Actions -->
         </div>
-    </div>
-
-    <div v-else>
-        <input
-            class="border border-black w-full outline-none p-2"
-            type="text" 
-            :placeholder="placeholder"
-
-            @change="change"
-        >
     </div>
 </template>
