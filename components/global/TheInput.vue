@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { InputTypes, Variant } from '~/types/Input';
-// import VsxIcon from "vue-iconsax";
 
 const props=withDefaults(defineProps<{
     variant:Variant,
