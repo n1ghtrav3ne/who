@@ -6,11 +6,11 @@ const props=defineProps({
     type:String,
   },
   buttonType:{
-    type:String as PropType <ButtonType>,
+    type:String as ()=>ButtonType,
     default:"ghost"
   },
   size:{
-    type:String as PropType <Size>,
+    type:String as ()=>Size,
     default:"md"
   }
 })
