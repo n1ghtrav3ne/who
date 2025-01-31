@@ -21,14 +21,16 @@ const change=(event:Event)=>{
 </script>
 
 <template>
-    <div class="flex">
+    <div 
+        class="flex items-center pl-2"
+        :class="{
+            'border-b border-b-black':variant=='underline',
+            'border border-black':variant=='bordered'
+        }"
+    >
         <div class="grow">
             <input
                 class="w-full outline-none p-2"
-                :class="{
-                    'border-b border-b-black':variant=='underline',
-                    'border border-black':variant=='bordered'
-                }"
 
                 :type="type" 
                 :placeholder="placeholder"
@@ -37,8 +39,8 @@ const change=(event:Event)=>{
             >
         </div>
 
-        <div>
-            <!-- Actions -->
+        <div class="flex gap-2">
+            <slot />
         </div>
     </div>
 </template>
