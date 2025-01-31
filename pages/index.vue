@@ -3,12 +3,9 @@
 </script>
 
 <template>
-  <NuxtPage />
+
 </template>
 
-<style>
-body
-{
-  direction: rtl;
-}
+<style scoped>
+
 </style>
