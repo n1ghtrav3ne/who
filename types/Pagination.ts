@@ -1,4 +1,5 @@
 export interface PaginationProps{
     count:number
-    current:number
+    current:number,
+    groupSize?:number
 }

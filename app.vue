@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const currentIndex=ref(1);
+const currentIndex=ref(3);
 
 const updateList=(i:number)=>{
-  console.log(i);
+  console.log(i/5);
   
 }
 
@@ -10,7 +10,7 @@ const updateList=(i:number)=>{
 
 <template>
   <div class="mt-10 mx-auto w-[600px]">
-    <ThePagination :count="7" v-model:current="currentIndex" @change="updateList" />
+    <ThePagination :count="15" v-model:current="currentIndex" :groupSize="5" @change="updateList" />
   </div>
 </template>
 
