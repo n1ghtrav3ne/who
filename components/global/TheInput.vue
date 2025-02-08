@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { InputProps } from '~/types/Input';
+import type { InputProps } from '~/types/components/Input';
 
 const model=defineModel({required:true});
 

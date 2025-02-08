@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PaginationProps } from '~/types/Pagination';
+import type { PaginationProps } from '~/types/components/Pagination';
 
 const props=withDefaults(defineProps<PaginationProps>(),{
     groupSize:3

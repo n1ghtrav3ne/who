@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ButtonType , Size } from "~/types/Button"
+import type { ButtonType , Size } from "~/types/components/Button"
 
 const props=defineProps({
   text:{
