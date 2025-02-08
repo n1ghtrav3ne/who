@@ -22,6 +22,23 @@ module.exports = {
           800:"#454545",
           900:"#3d3d3d",
           950:"#0a0a0a",
+        },
+        error:{
+          light:"#DC3545",
+          dark:"#F15771"
+        },
+        success:{
+          light:"#28A745",
+          dark:"#85D3C3"
+        },
+        warning:{
+          light:"#FFBE00",
+          dark:"#F1E194"
+        },
+
+        link:{
+          default:"#115EA3",
+          dark:"#115EA3"
         }
       }
     },
