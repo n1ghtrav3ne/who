@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import type { InputTypes, Variant } from '~/types/Input';
+import type { InputProps } from '~/types/Input';
 
 const model=defineModel({required:true});
 
-const props=withDefaults(defineProps<{
-    variant?:Variant,
-    placeholder?:string,
-    type?:InputTypes
-}>(),{
+const props=withDefaults(defineProps<InputProps>(),{
     type:"text",
     variant:'bordered'
 });
@@ -17,8 +13,13 @@ const props=withDefaults(defineProps<{
     <div 
         class="flex items-center pl-2"
         :class="{
-            'border-b border-b-black':variant=='underline',
-            'border border-black':variant=='bordered'
+            'bg-neutral-200':disabled,
+
+            'border-b border-b-black':variant=='underline' && !disabled,
+            'border border-black':variant=='bordered' && !disabled,
+
+            'border-b border-b-neutral-400':variant=='underline' && disabled,
+            'border border-neutral-400':variant=='bordered' && disabled,
         }"
     >
         <div class="grow">
@@ -28,6 +29,8 @@ const props=withDefaults(defineProps<{
                 v-model="model"
                 :type="type" 
                 :placeholder="placeholder"
+
+                :disabled="disabled"
             >
         </div>
 
@@ -36,3 +39,6 @@ const props=withDefaults(defineProps<{
         </div>
     </div>
 </template>
+
+<style scoped>
+</style>
