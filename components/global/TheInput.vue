@@ -23,8 +23,8 @@ const props=withDefaults(defineProps<InputProps>(),{
             'border border-neutral-400':variant=='bordered' && disabled,
 
             //Error style
-            'border-b border-b-error-dark':variant=='underline' && errorMsg,
-            'border border-error-dark':variant=='bordered' && errorMsg,
+            'border-b border-b-error-dark':variant=='underline' && errorMsg && !disabled,
+            'border border-error-dark':variant=='bordered' && errorMsg && !disabled,
         }"
     >
         <div class="grow">
@@ -42,5 +42,9 @@ const props=withDefaults(defineProps<InputProps>(),{
         <div class="flex gap-2">
             <slot />
         </div>
+    </div>
+    <div v-if="!disabled && errorMsg" class="text-error-dark flex gap-1 items-center text-xs">
+        <span class="pt-2">*</span>
+        <span>{{ errorMsg }}</span>
     </div>
 </template>
