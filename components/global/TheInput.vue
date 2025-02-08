@@ -21,6 +21,10 @@ const props=withDefaults(defineProps<InputProps>(),{
             'bg-neutral-200':disabled,
             'border-b border-b-neutral-400':variant=='underline' && disabled,
             'border border-neutral-400':variant=='bordered' && disabled,
+
+            //Error style
+            'border-b border-b-error-dark':variant=='underline' && errorMsg,
+            'border border-error-dark':variant=='bordered' && errorMsg,
         }"
     >
         <div class="grow">
@@ -40,6 +44,3 @@ const props=withDefaults(defineProps<InputProps>(),{
         </div>
     </div>
 </template>
-
-<style scoped>
-</style>
