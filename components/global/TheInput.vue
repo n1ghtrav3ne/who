@@ -1,22 +1,16 @@
 <script setup lang="ts">
 import type { InputTypes, Variant } from '~/types/Input';
 
+const model=defineModel({required:true});
+
 const props=withDefaults(defineProps<{
-    variant:Variant,
-    placeholder:string,
+    variant?:Variant,
+    placeholder?:string,
     type?:InputTypes
 }>(),{
-    type:"text"
+    type:"text",
+    variant:'bordered'
 });
-
-const emits=defineEmits<{
-    (event:'update:modelValue',value:string):void
-}>();
-
-const change=(event:Event)=>{
-    const target=event.target as HTMLInputElement;
-    emits("update:modelValue",target.value);
-}
 </script>
 
 <template>
@@ -31,10 +25,9 @@ const change=(event:Event)=>{
             <input
                 class="w-full outline-none p-2"
 
+                v-model="model"
                 :type="type" 
                 :placeholder="placeholder"
-
-                @change="change"
             >
         </div>
 
