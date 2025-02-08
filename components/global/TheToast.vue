@@ -10,6 +10,12 @@ const props=withDefaults(defineProps<ToastProps>(),{
 
 const timerId=ref<NodeJS.Timeout|null>(null);
 
+const startTimer=()=>{
+    timerId.value=setTimeout(()=>{
+        show.value=false;
+    },props.timer*1000);
+}
+
 watch([show,()=>props.text],([newShow,newText])=>{
     if(newShow || newText)
     {
@@ -17,16 +23,21 @@ watch([show,()=>props.text],([newShow,newText])=>{
         {
             clearTimeout(timerId.value)
         }
-        timerId.value=setTimeout(()=>{
-            show.value=false;
-        },props.timer*1000);
+        startTimer();
     }
 });
+
+const stopTimer=()=>{
+    if(timerId.value!=null)
+        clearTimeout(timerId.value);
+}
 </script>
 
 <template>
     <div
         v-if="show"
+        @mouseover="stopTimer"
+        @mouseleave="startTimer"
         class="fixed w-72 h-12 px-3 bg-neutral-950 flex items-center justify-between"
         :class="{
             'top-3 left-3':position==ToastPosition.TopLeft,
