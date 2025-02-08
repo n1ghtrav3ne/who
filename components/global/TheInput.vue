@@ -13,11 +13,12 @@ const props=withDefaults(defineProps<InputProps>(),{
     <div 
         class="flex items-center pl-2"
         :class="{
-            'bg-neutral-200':disabled,
-
+            //Normal style
             'border-b border-b-black':variant=='underline' && !disabled,
             'border border-black':variant=='bordered' && !disabled,
 
+            //Disabled style
+            'bg-neutral-200':disabled,
             'border-b border-b-neutral-400':variant=='underline' && disabled,
             'border border-neutral-400':variant=='bordered' && disabled,
         }"
