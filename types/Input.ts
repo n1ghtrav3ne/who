@@ -6,4 +6,5 @@ export interface InputProps{
     placeholder?:string
     type?:InputTypes
     disabled?:boolean
+    errorMsg?:string
 }
