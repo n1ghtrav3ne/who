@@ -1,0 +1,1 @@
+export type ProgressType ="xl"|"lg"|"md"|"sm"|"xs";
