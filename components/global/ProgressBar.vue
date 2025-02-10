@@ -17,7 +17,7 @@ const props=defineProps({
 })
 </script>
 <template>
-  <div class="flex flex-col w-[132px] gap-1 mx-auto mt-10"
+  <div class="flex flex-col w-[132px] gap-1"
        :class="{'size-[49px]':size=='xl',
                 'size-[42px]':size=='lg',
                 'size-[38px]':size=='md',
