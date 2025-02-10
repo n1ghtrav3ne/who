@@ -2,10 +2,6 @@
 
 const model=defineModel<boolean>({"required":true})
 
-const emit=defineEmits<{
-  (event:"update:modelValue",value:boolean):void
-}>();
-
 const toggle=()=>{
   model.value=!model.value;
 }
