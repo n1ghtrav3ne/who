@@ -17,7 +17,7 @@ const toggleButton = () => {
 </script>
 
 <template>
-  <div class="flex flex-row h-6 w-fit items-center gap-2 mx-auto mt-10">
+  <div class="flex flex-row h-6 w-fit items-center gap-2">
 
     <div
         @click="toggleButton"
