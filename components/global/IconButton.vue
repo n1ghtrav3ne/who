@@ -2,9 +2,6 @@
 import type { ButtonType , Size } from "~/types/components/Button"
 
 const props=defineProps({
-  text:{
-    type:String,
-  },
   buttonType:{
     type:String as ()=>ButtonType,
     default:"ghost"
@@ -16,21 +13,17 @@ const props=defineProps({
 })
 </script>
 <template>
-  <div class="flex flex-row gap-2 items-center w-fit cursor-pointer"
-  :class="{
+  <div class="flex flex-row items-center w-fit cursor-pointer"
+       :class="{
     'border border-black':buttonType=='outline',
     'bg-black text-white':buttonType=='fill',
-    'px-6 size-[56px] text-[16px]':size=='xl',
-    'px-6 size-[46px] text-sm':size=='lg',
-    'px-[20px] size-[40px] text-sm':size=='md',
-    'px-[20px] size-[40px] text-xs !gap-1':size=='sm',
+    'px-6 size-[56px]':size=='xl',
+    'px-[20px] size-[46px]':size=='lg',
+    'px-[17px] size-[40px]':size=='md',
+    'px-[13px] size-[32px]':size=='sm',
   }">
 
-    <slot name="prefix" />
-
-    <span>{{text}}</span>
-
-    <slot name="suffix" />
+    <slot />
 
   </div>
 </template>
