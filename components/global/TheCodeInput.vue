@@ -19,7 +19,6 @@ const changeInput=(event:KeyboardEvent)=>{
     {
         model.value="";
     }
-    console.log(inputs.value[currentInputIndex]?.value);
     model.value+=inputs.value[currentInputIndex]?.value;
 
     if(currentInputIndex<inputs.value.length-1){
@@ -36,7 +35,7 @@ const changeInput=(event:KeyboardEvent)=>{
                     :maxlength="characterPerInput"
                     @keyup="changeInput($event)"
                     type="text" 
-                    class="border-b text-center outline-none px-2 w-full py-1">
+                    class="border-b border-b-red-600 text-center outline-none px-2 w-full py-1">
         </div>
     </div>
 </template>
