@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import type { CodeInputProps } from '~/types/components/CodeInput';
 
-const model = defineModel<string>();
-const props = defineProps<CodeInputProps>();
+const model=defineModel<string>();
+const props=defineProps<CodeInputProps>();
 
 /**
  * Contains all the input fields.
  */
-const inputs = ref<Array<HTMLInputElement | null>>(Array(props.maxCharachters / props.characterPerInput)
+const inputs=ref<Array<HTMLInputElement | null>>(Array(props.maxCharachters / props.characterPerInput)
                 .fill(null));
 
 /**
