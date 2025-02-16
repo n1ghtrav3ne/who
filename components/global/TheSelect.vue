@@ -1,4 +1,16 @@
 <script setup lang="ts">
+/// TODO: Remove example later
+/** COMPONENT‌ EXAMPLE‌ USAGE
+ * <TheSelect v-model="value" default-label="عنوان" title="عنوان">
+        <template #options="{selectOption}">
+            <div v-for="option in options" :key="option.b" @click="selectOption(option.a,option.b)">
+                {{ option.a }}
+            </div>
+        </template>
+    </TheSelect>
+ */
+
+ 
 import type { SelectProps } from '~/types/components/Select';
 
 const props=defineProps<SelectProps>();
