@@ -29,15 +29,15 @@ const selectOption=(label:string,value:string)=>{
 <template>
     <div class="cursor-pointer select-none w-72 flex flex-col gap-2">
         <div>
-            عنوان
+            {{title}}
         </div>
 
-        <div @click="isOpen=!isOpen" class="relative border border-black py-1 flex justify-around items-center">
+        <div @click="isOpen=!isOpen" class="relative border border-black py-1 px-3 flex justify-around items-center">
             <div>
                 ic
             </div>
 
-            <div class="text-neutral-400">
+            <div class="text-neutral-400 grow text-center" :class="{'text-neutral-900':isOpen}">
                 {{currentOption || defaultLabel}}
             </div>
 
