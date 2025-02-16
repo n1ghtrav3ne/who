@@ -1,0 +1,41 @@
+<script setup lang="ts">
+import type { ButtonType , Size } from "~/types/components/Button"
+
+const props=defineProps({
+  text:{
+    type:String,
+  },
+  buttonType:{
+    type:String as ()=>ButtonType,
+    default:"ghost"
+  },
+  size:{
+    type:String as ()=>Size,
+    default:"md"
+  },
+  disabled:{
+    type:Boolean,
+    default:false
+  }
+})
+</script>
+<template>
+  <div class="flex flex-row gap-2 items-center w-fit cursor-pointer mx-auto mt-10"
+       :class="{
+    'border-[3px] border-neutral-950':buttonType=='outline',
+    'border-[3px] border-neutral-200 bg-black text-white':buttonType=='fill',
+    'px-6 size-[56px] text-[16px]':size=='xl',
+    'px-6 size-[46px] text-sm':size=='lg',
+    'px-[20px] size-[40px] text-sm':size=='md',
+    'px-[20px] size-[40px] text-xs !gap-1':size=='sm',
+    'opacity-65':disabled,
+  }">
+
+    <slot name="prefix" />
+
+    <span>{{text}}</span>
+
+    <slot name="suffix" />
+
+  </div>
+</template>
