@@ -50,16 +50,22 @@ const updateModel=async()=>{
 </script>
 
 <template>
-    <div class="flex gap-2" dir="ltr">
-        <div class="min-w-28 w-6" v-for="(item, i) in maxCharachters / characterPerInput" :key="i">
-            <input
-                :ref="(el) => inputs[i] = (el as HTMLInputElement)"
-                :maxlength="characterPerInput"
-                @input="inputHandler"
-                @keydown="handleBackspace"
-                type="text"
-                class="border-b text-center outline-none px-2 w-full py-1"
-            />
-        </div>
+    <div dir="ltr">
+        <div class="flex gap-2">
+            <div class="min-w-28 w-6" v-for="(item, i) in maxCharachters / characterPerInput" :key="i">
+                <input
+                    :ref="(el) => inputs[i] = (el as HTMLInputElement)"
+                    :maxlength="characterPerInput"
+                    @input="inputHandler"
+                    @keydown="handleBackspace"
+                    type="text"
+                    class="border-b text-center outline-none px-2 w-full py-1"
+                    :class="{
+                        'border-b-error-light text-error-light':errorMsg
+                    }"
+                />
+            </div>
+        </div>  
+        <InputErrorMsg v-if="errorMsg" :text="errorMsg" />
     </div>
 </template>

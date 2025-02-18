@@ -43,8 +43,5 @@ const props=withDefaults(defineProps<InputProps>(),{
             <slot />
         </div>
     </div>
-    <div v-if="!disabled && errorMsg" class="text-error-dark flex gap-1 items-center text-xs">
-        <span class="pt-2">*</span>
-        <span>{{ errorMsg }}</span>
-    </div>
+    <InputErrorMsg v-if="!disabled && errorMsg" :text="errorMsg" />
 </template>
