@@ -180,7 +180,7 @@
 </template>
 
 <script setup>
-import {getJalaliDate} from "~/utils/JalaliDate.js";
+import {getJalaliDate} from "~/utils/JalaliDate";
 
 const today = new Date();
 const jalaliDate = ref(getJalaliDate(today));

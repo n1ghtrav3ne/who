@@ -1,13 +1,13 @@
 <script setup lang="ts">
-
+const emit=defineEmits(['close'])
 </script>
 
 <template>
-  <div class="flex flex-col w-full px-5">
+  <div class="flex flex-col h-screen w-full px-5 bg-white fixed top-0 right-0 left-0 z-50 lg:hidden">
 
     <div class="flex flex-row h-[64px] justify-between items-center w-full">
 
-      <span class="material-symbols-rounded">
+      <span @click="emit('close')" class="material-symbols-rounded">
       close
       </span>
 

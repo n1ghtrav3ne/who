@@ -3,7 +3,8 @@
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 w-full px-10 pb-8 pt-[72px]">
+
+  <div class="flex flex-col gap-2 w-full px-10 pb-8 pt-[72px] absolute bottom-0">
 
     <div class="flex flex-row justify-between items-center text-[16px]">
 

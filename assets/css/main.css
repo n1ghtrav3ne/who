@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none !important;
+}
+
+html{
+    overflow-x: hidden !important;
+}
+
+.container{
+    padding: 12px !important;
+}
