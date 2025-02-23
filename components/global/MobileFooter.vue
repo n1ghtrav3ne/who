@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col w-fit gap-6 px-5 pt-14 pb-2 mt-[100%]">
+  <div class="flex flex-col w-full gap-6 px-5 pt-14 pb-2">
 
     <div class="flex flex-col gap-6 text-[16px]">
       <span>اینستاگرام</span>
