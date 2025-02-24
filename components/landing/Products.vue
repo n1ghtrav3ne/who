@@ -11,7 +11,7 @@ import model2 from "assets/image/model2.png";
       <Poster :img="model" />
     </div>
 
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 h-[550px] w-full">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 w-full">
 
       <poster :img="model" />
       <poster :img="model2" />

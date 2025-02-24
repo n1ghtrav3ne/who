@@ -21,11 +21,12 @@ import Products from "~/components/landing/Products.vue";
 
     <span class="text-[20px] font-light text-center lg:text-2xl">دسته بندی ها</span>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-8 h-[700px]">
+    <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-8 h-[700px] overflow-y-auto">
 
       <Poster class="bg-center" :img="model2" />
       <Poster class="bg-center" :img="model" />
       <Poster class="bg-center" :img="model2" />
+
 
     </div>
 
