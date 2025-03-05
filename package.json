@@ -17,5 +17,8 @@
     "pinia": "^2.3.0",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "nuxt-swiper": "^2.0.0"
   }
 }

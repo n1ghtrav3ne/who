@@ -6,7 +6,7 @@ const props=defineProps({
 </script>
 
 <template>
-  <div class="flex flex-col w-[400px] gap-2 lg:gap-10 border px-4 py-[19px] mx-auto mt-10">
+  <div class="flex flex-col w-[400px] gap-2 lg:gap-10 px-4 py-[19px]">
 
     <div class="flex flex-row justify-between items-center">
 
