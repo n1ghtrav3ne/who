@@ -2,9 +2,5 @@
 </script>
 
 <template>
-
+  <HomePage />
 </template>
-
-<style scoped>
-
-</style>
