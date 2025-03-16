@@ -4,9 +4,9 @@ import ArrowButton from "~/components/global/ArrowButton.vue";
 </script>
 
 <template>
-  <div class="flex flex-row w-full items-center gap-4 text-xs lg:text-sm">
+  <div class="flex flex-row w-full items-center gap-2 text-xs lg:text-sm">
 
-    <div class="flex flex-row">
+    <div class="flex flex-row items-center lg:items-start">
 
       <CheckBox />
 

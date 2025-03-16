@@ -7,7 +7,7 @@ import slide from "~/assets/image/slide.jpg"
 </script>
 
 <template>
-  <div class="grid grid-cols-2 w-full gap-y-5 mt-5">
+  <div class="grid grid-cols-2 w-full mt-5">
 
     <Poster :img="male">
       <div class="w-full h-full border flex flex-col items-center relative justify-center text-neutral-50">

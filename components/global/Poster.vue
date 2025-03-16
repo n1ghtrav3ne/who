@@ -34,7 +34,7 @@ const handleImageError = () => {
       <span class="text-error-light text-sm">خطا در لود عکس</span>
     </div>
 
-    <div v-if="$slots.default" class="absolute w-full h-full">
+    <div v-if="$slots.default" class="absolute w-full h-full flex justify-center items-center">
       <slot />
     </div>
   </div>

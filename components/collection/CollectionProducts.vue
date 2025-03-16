@@ -1,0 +1,47 @@
+<script setup lang="ts">
+  import female from "~/assets/image/female.jpg"
+  import male from "~/assets/image/male.jpg"
+</script>
+
+<template>
+  <div class="flex flex-col gap-4">
+
+    <div class="flex pr-4 lg:hidden">
+      <FilterList />
+    </div>
+
+    <div class="flex flex-row relative">
+      <Poster :img="female">
+        <span class="text-[16px] lg:text-[32px] font-light text-neutral-50">Urban Style</span>
+      </Poster>
+
+      <Poster :img="male">
+        <span class="text-[16px] lg:text-[32px] font-light text-neutral-50">Urban Style</span>
+      </Poster>
+
+      <div class="absolute flex flex-col items-center justify-end text-sm lg:text-[20px] lg:font-bold text-neutral-50 w-full h-full bottom-8">
+        <span>اسکرول کنید</span>
+
+        <span class="material-symbols-rounded">
+        south
+        </span>
+      </div>
+
+    </div>
+
+    <div class="pr-4 hidden lg:flex">
+      <FilterList />
+    </div>
+
+    <div class="container grid grid-cols-2 lg:grid-cols-4 gap-4 gap-y-8">
+
+      <ProductCard v-for="index in 8" title="محصول مورد نظر کد" :code="1234" :available="true" :price="30000" :discount-price="15000" />
+
+    </div>
+
+    <div class="flex items-center flex-col w-full">
+      <ThePagination :count="8" :model-value="8"/>
+    </div>
+
+  </div>
+</template>
