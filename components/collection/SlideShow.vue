@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import image1 from "~/assets/image/image1.jpg"
+import image1 from "assets/image/image1.jpg"
 
-import image2 from "~/assets/image/image2.jpg"
+import image2 from "assets/image/image2.jpg"
 
-import image3 from "~/assets/image/image3.jpg"
+import image3 from "assets/image/image3.jpg"
 
-import slide from "~/assets/image/slide.jpg"
+import slide from "assets/image/slide.jpg"
 
 type hero ="hero1"|"hero2"
 

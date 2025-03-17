@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import shoe from "~/assets/image/shoe.jpg"
+import shoe from "assets/image/shoe.jpg"
 
-import clothes from "~/assets/image/clothes.jpg"
+import clothes from "assets/image/clothes.jpg"
 
-import pants from "~/assets/image/pants.jpg"
+import pants from "assets/image/pants.jpg"
 
 </script>
 

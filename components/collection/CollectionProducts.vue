@@ -1,6 +1,10 @@
 <script setup lang="ts">
-  import female from "~/assets/image/female.jpg"
-  import male from "~/assets/image/male.jpg"
+  import female from "assets/image/female.jpg"
+  import male from "assets/image/male.jpg"
+  import FilterList from "~/components/global/FilterList.vue";
+  import Poster from "~/components/global/Poster.vue";
+  import ProductCard from "~/components/global/ProductCard.vue";
+  import ThePagination from "~/components/global/ThePagination.vue";
 </script>
 
 <template>
