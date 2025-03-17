@@ -1,11 +1,11 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-
+  <div>
+    <CategoryPage />
+  </div>
 </template>
-
-<style scoped>
-
-</style>
+<script setup>
+import CategoryPage from "~/components/category/CategoryPage.vue";
+definePageMeta({
+  layout:'default'
+})
+</script>

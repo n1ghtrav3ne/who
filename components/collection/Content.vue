@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import male from "~/assets/image/male.jpg"
+import male from "assets/image/male.jpg"
 
-import female from "~/assets/image/female.jpg"
+import female from "assets/image/female.jpg"
 
-import slide from "~/assets/image/slide.jpg"
+import slide from "assets/image/slide.jpg"
 </script>
 
 <template>
