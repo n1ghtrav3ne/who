@@ -30,7 +30,7 @@
 
     </div>
 
-    <div v-if="show" class="text-xs lg:text-sm flex flex-col gap-1">
+    <div v-if="show" class="text-xs lg:text-sm flex flex-col gap-2">
 
       <div v-for="(item,index) in items" :key="index">
 

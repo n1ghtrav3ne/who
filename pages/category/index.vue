@@ -4,7 +4,7 @@
   </div>
 </template>
 <script setup>
-import CategoryPage from "~/components/category/CategoryPage.vue";
+import CategoryPage from "~/components/routes/category/CategoryPage.vue";
 definePageMeta({
   layout:'default'
 })

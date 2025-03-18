@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import model from "assets/image/model1.png";
 import model2 from "assets/image/model2.png";
-import Achievements from "~/components/landing/Achievements.vue";
-import Discount from "~/components/landing/Discount.vue";
-import Products from "~/components/landing/Products.vue";
+import Achievements from "~/components/routes/landing/Achievements.vue";
+import Discount from "~/components/routes/landing/Discount.vue";
+import Products from "~/components/routes/landing/Products.vue";
 </script>
 
 <template>

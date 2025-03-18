@@ -24,7 +24,7 @@ const props=defineProps({
 })
 </script>
 <template>
-  <div class="flex flex-row text-center w-fit mx-auto mt-10 items-center gap-2"
+  <div class="flex flex-row text-center w-fit items-center gap-2"
        :class="{'text-sm':size=='sm'}">
     <div>
       <NuxtLink to="/public" class="flex flex-row items-center gap-2">
