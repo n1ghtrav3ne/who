@@ -1,10 +1,10 @@
 <template>
   <div>
-    <LandingPage />
+    <ProductPage />
   </div>
 </template>
 <script setup>
-import LandingPage from "~/components/routes/landing/LandingPage.vue";
+import ProductPage from "~/components/routes/product/ProductPage.vue";
 definePageMeta({
   layout:"default",
 })

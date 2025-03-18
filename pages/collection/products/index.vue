@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import CollectionProducts from "~/components/collection/CollectionProducts.vue";
+import CollectionProducts from "~/components/routes/collection/CollectionProducts.vue";
 </script>

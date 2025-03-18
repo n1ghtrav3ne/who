@@ -3,7 +3,7 @@ import type { ButtonType , Size } from "~/types/components/Button"
 
 const props=defineProps({
   text:{
-    type:String,
+    type: [String, Number] ,
   },
   buttonType:{
     type:String as ()=>ButtonType,
@@ -16,7 +16,7 @@ const props=defineProps({
 })
 </script>
 <template>
-  <div class="flex flex-row gap-2 items-center w-fit cursor-pointer"
+  <div class="flex flex-row gap-2 items-center justify-center w-fit cursor-pointer select-none"
   :class="{
     'border border-black':buttonType=='outline',
     'bg-black text-white':buttonType=='fill',
