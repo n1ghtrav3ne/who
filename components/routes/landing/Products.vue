@@ -7,7 +7,7 @@ import model2 from "assets/image/model2.png";
 <template>
   <div class="w-full h-auto flex flex-col gap-4">
 
-    <div class="w-full h-[400px] lg:hidden">
+    <div class="w-full lg:hidden">
       <Poster :img="model" />
     </div>
 

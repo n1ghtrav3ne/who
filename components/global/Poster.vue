@@ -19,7 +19,7 @@ const handleImageError = () => {
 
     <img
         v-if="loading && !error"
-        class="w-full h-full"
+        class="w-full h-full object-cover"
         :src="props.img"
         alt="image"
         @load="handleImageLoad"

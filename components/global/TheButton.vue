@@ -12,6 +12,10 @@ const props=defineProps({
   size:{
     type:String as ()=>Size,
     default:"md"
+  },
+  disabled:{
+    type:Boolean,
+    default:false
   }
 })
 </script>
@@ -24,6 +28,7 @@ const props=defineProps({
     'px-6 size-[46px] text-sm':size=='lg',
     'px-[20px] size-[40px] text-sm':size=='md',
     'px-[20px] size-[40px] text-xs !gap-1':size=='sm',
+     'opacity-65':disabled,
   }">
 
     <slot name="prefix" />
