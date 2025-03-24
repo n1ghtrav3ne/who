@@ -27,10 +27,8 @@ const handleKeyDown = (event: KeyboardEvent) => {
 </script>
 
 <template>
-  <div class="container w-full h-screen flex flex-col justify-center items-center"
+  <div class="container w-full h-screen flex flex-col justify-center items-center gap-8 mx-auto mb-32 lg:w-[25%]"
        @keydown="handleKeyDown">
-
-    <div class="flex flex-col items-center gap-8 w-full mb-32 lg:w-[25%]">
 
       <span class="text-2xl font-light">ورود / ثبت نام</span>
 
@@ -56,7 +54,6 @@ const handleKeyDown = (event: KeyboardEvent) => {
           text="ادامه"
           @click="handleSubmit"
       />
-    </div>
 
 
   </div>
