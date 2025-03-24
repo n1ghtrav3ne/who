@@ -27,7 +27,9 @@ const selectOption=(label:string,value:string)=>{
 </script>
 
 <template>
-    <div class="cursor-pointer select-none w-72 flex flex-col gap-2">
+    <div class="cursor-pointer select-none w-72 flex flex-col gap-2"
+         :class="{'opacity-40  pointer-events-none':disabled}">
+
         <div>
             {{title}}
         </div>
