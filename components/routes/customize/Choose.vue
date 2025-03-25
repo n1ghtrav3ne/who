@@ -1,28 +1,29 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 
 const props = defineProps({
   title: String,
   target: String,
 })
 
-const size = ['2xl', 'xl', 'l', 's']
-const router = useRouter()
+const emit=defineEmits(['change'])
 
-const routeHandler = () => {
-  router.push(props.target as string)
-}
+const size = ['2xl', 'xl', 'l', 's']
+
+const router = useRouter()
 
 const selectedOption = ref<'first' | 'second' | null>(null)
 
-const selectOption = (option: 'first' | 'second') => {
-  selectedOption.value = selectedOption.value === option ? null : option
+
+const routeHandler = () => {
+  router.push(props.target as string)
+  emit('change')
 }
+
 </script>
 
 <template>
   <div class="container flex flex-col gap-8 justify-center items-center w-full h-screen">
+
     <div class="flex text-center">
       <span class="text-2xl">
         سایز <span class="font-bold">{{ title }}</span>
@@ -33,7 +34,12 @@ const selectOption = (option: 'first' | 'second') => {
     <div class="flex gap-4 flex-col justify-center lg:items-center">
 
       <div class="flex items-center gap-2">
-        <RadioButton text="انتخاب بر اساس اندازه گیری خودتان" @click="selectOption('first')" :selected="selectedOption === 'first'" />
+
+        <RadioButton text="انتخاب بر اساس اندازه گیری خودتان"
+                     :disabled="selectedOption === 'second'"
+                     :isChecked="selectedOption === 'first'"
+                     @change="selectedOption='first'" />
+
       </div>
 
       <TheSelect class="w-full"
@@ -48,8 +54,14 @@ const selectOption = (option: 'first' | 'second') => {
 
 
       <div class="flex items-center gap-2">
-        <RadioButton text="انتخاب بر اساس اندازه گیری خودتان" @click="selectOption('second')" :selected="selectedOption === 'second'" />
+        <RadioButton text="انتخاب بر اساس اندازه گیری خودتان"
+                     :disabled="selectedOption === 'first'"
+                     :isChecked="selectedOption === 'second'"
+                     @change="selectedOption='second'"
+        />
+
         <span class="text-blue-900 text-sm underline cursor-pointer">آموزش اندازه گیری</span>
+
       </div>
 
       <TheSelect class="w-full"

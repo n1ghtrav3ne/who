@@ -5,38 +5,26 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  isChecked: Boolean,
 });
-
-const isChecked = ref(false);
-
-const toggleButton = () => {
-  if (!props.disabled) {
-    isChecked.value = !isChecked.value;
-  }
-};
 </script>
 
 <template>
   <div class="flex flex-row h-6 w-fit items-center gap-2">
 
     <div
-        @click="toggleButton"
+        @click="$emit('change')"
         class="min-w-4 min-h-4 select-none cursor-pointer rounded-full flex justify-center p border-2 border-neutral-500 duration-200 items-center"
         :class="{
         'border-neutral-950': isChecked,
         '!border-neutral-400 !cursor-not-allowed': disabled,
       }"
     >
-
-    <div class="rounded-full bg-neutral-950 min-h-2 min-w-2 invisible" :class="{'!visible': isChecked}">
-
+      <div class="rounded-full bg-neutral-950 min-h-2 min-w-2 invisible" :class="{'!visible': isChecked}"></div>
     </div>
 
-    </div>
-
-    <!-- Label -->
     <span
-        @click="toggleButton"
+        @click="$emit('change')"
         class="text-sm pb-1.5 text-neutral-900 cursor-pointer select-none"
         :class="{
         'text-neutral-950': isChecked,
@@ -47,6 +35,5 @@ const toggleButton = () => {
     </span>
 
     <slot />
-
   </div>
 </template>
