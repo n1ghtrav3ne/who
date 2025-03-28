@@ -1,17 +1,18 @@
 <script setup lang="ts">
   const items=reactive([
-    'پیشخوان',
-    'سفارش های من',
-    'سایز های من',
-    'مورد علاقه ها',
-    'آدرس ها',
-    'اطلاعات حساب کاربری',
-    'خروج'
+    {name:'پیشخوان',path:'dashboard'},
+    {name:'سفارش های من',path:'orders'},
+    {name:'سایز های من',path:'order'},
+    {name:'مورد علاقه ها',path:'order'},
+    {name:'آدرس ها',path:'order'},
+    {name:'اطلاعات حساب کاربری',path:'order'},
+    {name:'خروج',path:'order'},
   ])
 
   const selectedIndex = ref(0);
 
   function selectItem(index: number) {
+    useRouter().push(items[index].path);
     selectedIndex.value = index;
   }
 </script>
@@ -41,7 +42,7 @@
         home
         </span>
 
-        {{item}}
+        {{item.name}}
       </div>
 
     </div>

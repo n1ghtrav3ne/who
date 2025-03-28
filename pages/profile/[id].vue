@@ -5,6 +5,7 @@ definePageMeta({
 
 const questionComponents = {
   'dashboard': () => import('~/components/routes/profile/dashboard/DashboardPage.vue'),
+  'orders': () => import('~/components/routes/profile/orders/OrderPage.vue'),
 };
 
 const route = useRoute();
