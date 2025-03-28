@@ -16,15 +16,15 @@ const show=ref(false);
       <span class="text-[16px] font-bold lg:text-[20px]">مورد علاقه ها</span>
 
       <div v-if="show"
-           class="flex w-[80%] flex-row gap-8 whitespace-nowrap select-none pr-5 lg:gap-12"
-      >
-        <ProductCard v-for="index in 1"
+           class="flex flex-nowrap gap-8 select-none pr-5 overflow-x-auto lg:gap-12 w-full">
+        <ProductCard v-for="index in 8"
+                     :key="index"
                      title="محصول مورد نظر کد"
                      :code="1234"
                      :available="true"
                      :price="30000"
-                     :discount-price="15000" />
-
+                     :discount-price="15000"
+                     class="flex-shrink-0" />
       </div>
 
       <div v-else class="gap-1 text-[16px] font-light lg:text-[20px]">
@@ -42,15 +42,15 @@ const show=ref(false);
       <span class="text-[16px] font-bold lg:text-[20px]">خرید های پر تکرار</span>
 
       <div v-if="show"
-           class="flex flex-row gap-8 whitespace-nowrap overflow-x-auto select-none pr-5 lg:gap-12"
-      >
+           class="flex flex-nowrap gap-8 select-none pr-5 overflow-x-auto lg:gap-12 w-full">
         <ProductCard v-for="index in 8"
+                     :key="index"
                      title="محصول مورد نظر کد"
                      :code="1234"
                      :available="true"
                      :price="30000"
-                     :discount-price="15000" />
-
+                     :discount-price="15000"
+                     class="flex-shrink-0" />
       </div>
 
       <div v-else class="text-[16px] font-light gap-1 lg:text-[20px]">
