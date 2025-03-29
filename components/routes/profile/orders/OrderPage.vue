@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import model from "~/assets/image/model1.png"
+import ProcessStatus from "~/components/routes/profile/orders/ProcessStatus.vue";
 
 const items=reactive(['جاری','تحویل شده','مرجوع شده'])
 
@@ -41,7 +42,7 @@ const toggleIndex=(index:number)=>{
 
       <div class="flex flex-row w-full text-sm lg:text-[16px]">
 
-        <span class="w-full">در حال پردازش</span>
+        <ProcessStatus status="delivered" />
 
         <span class="text-sm text-neutral-400 w-full lg:text-[16px]">
         ۲۹ بهمن ۱۴۰۳
