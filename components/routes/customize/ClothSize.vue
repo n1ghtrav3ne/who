@@ -5,8 +5,6 @@ import Choose from "~/components/routes/customize/Choose.vue";
 
 <template>
   <div>
-
       <Choose target="pants" title="لباس" />
-
   </div>
 </template>

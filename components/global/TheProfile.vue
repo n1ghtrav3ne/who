@@ -1,28 +1,39 @@
 <script setup lang="ts">
-  const items=reactive([
-    {name:'پیشخوان',path:'dashboard'},
-    {name:'سفارش های من',path:'orders'},
-    {name:'سایز های من',path:'order'},
-    {name:'مورد علاقه ها',path:'order'},
-    {name:'آدرس ها',path:'order'},
-    {name:'اطلاعات حساب کاربری',path:'order'},
-    {name:'خروج',path:'order'},
-  ])
+const router = useRouter()
+const route = useRoute()
 
-  const selectedIndex = ref(0);
+const items = reactive([
+  { name: 'پیشخوان', path: 'dashboard' },
+  { name: 'سفارش های من', path: 'orders' },
+  { name: 'سایز های من', path: 'size' },
+  { name: 'مورد علاقه ها', path: 'favorites' },
+  { name: 'آدرس ها', path: 'address' },
+  { name: 'اطلاعات حساب کاربری', path: 'information' },
+  { name: 'خروج', path: '' },
+])
 
-  function selectItem(index: number) {
-    useRouter().push(items[index].path);
-    selectedIndex.value = index;
+const showPopup = ref(false)
+
+function selectItem(index: number) {
+  if (items[index].name === 'خروج') {
+    showPopup.value = true
+  } else {
+    router.push(items[index].path)
   }
+}
+
+const selectedIndex = computed(() => {
+  return items.findIndex(item => route.path.includes(item.path))
+})
 </script>
+
 
 <template>
   <div class="flex flex-col gap-6 w-full lg:w-[25%] lg:gap-[60px]">
 
     <div class="flex flex-col gap-4">
 
-      <span class="text-[32px] font-bold">پروفایل</span>
+      <span class="text-[32px] font-bold">{{ items[selectedIndex]?.name }}</span>
 
       <span class="text-2xl font-light">محمد حسینی پور</span>
 
@@ -48,4 +59,9 @@
     </div>
 
   </div>
+
+  <PopUp title="از حساب کاربری خارج می‌شوید؟"
+         text="آیا اطمینان دارید از حساب کاربری‌تان خارج شوید؟"
+         v-if="showPopup"
+         @close="showPopup = false" />
 </template>

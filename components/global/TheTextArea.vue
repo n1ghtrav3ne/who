@@ -8,7 +8,7 @@ const props=defineProps<{
 
 <template>
     <textarea 
-        class="h-32 resize-y p-2
+        class="h-32 resize-y p-2 w-full
             border border-neutral-950 outline-none
             hover:border-2 focus:border-2"
 

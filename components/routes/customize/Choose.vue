@@ -22,7 +22,7 @@ const routeHandler = () => {
 </script>
 
 <template>
-  <div class="container flex flex-col gap-8 justify-center items-center w-full h-screen">
+  <div class="container flex flex-col gap-8 mt-10 items-center w-full h-screen">
 
     <div class="flex text-center">
       <span class="text-2xl">

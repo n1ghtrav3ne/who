@@ -6,6 +6,13 @@ definePageMeta({
 const questionComponents = {
   'dashboard': () => import('~/components/routes/profile/dashboard/DashboardPage.vue'),
   'orders': () => import('~/components/routes/profile/orders/OrderPage.vue'),
+  'size': () => import('~/components/routes/profile/size/SizePage.vue'),
+  'cloth': () => import('~/components/routes/customize/ClothSize.vue'),
+  'pants': () => import('~/components/routes/customize/PantsSize.vue'),
+  'shoes': () => import('~/components/routes/customize/ShoesSize.vue'),
+  'favorites': () => import('~/components/routes/profile/favorites/FavoritesPage.vue'),
+  'address': () => import('~/components/routes/profile/address/AddressPage.vue'),
+  'information': () => import('~/components/routes/profile/information/InformationPage.vue'),
 };
 
 const route = useRoute();
