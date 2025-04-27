@@ -1,5 +1,6 @@
 <script setup lang="ts">
     const showNav=ref<boolean>(false);
+    const showCard=ref<boolean>(false);
 </script>
 
 <template>
@@ -32,7 +33,7 @@
     </div>
 
     <div class="col-span-4 hidden md:flex justify-end gap-5">
-      <div class="cursor-pointer">
+      <div @click="showCard=true" class="cursor-pointer">
         سبد خرید
       </div>
 
@@ -41,7 +42,7 @@
       </div>
     </div>
 
-    <div class="col-span-4 flex md:hidden gap-2 justify-end">
+    <div @click="showCard=true" class="col-span-4 flex md:hidden gap-2 justify-end">
       <div>
         cart
       </div>
@@ -51,4 +52,7 @@
       </div>
     </div>
   </div>
+
+  <TheCard @close="showCard=false" class="duration-300" :class="showCard ? 'translate-x-0' : '-translate-x-full'" />
+
 </template>
