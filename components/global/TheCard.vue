@@ -60,8 +60,8 @@ const number=ref(0)
             </div>
 
             <span class="material-symbols-outlined cursor-pointer">
-          delete
-          </span>
+            delete
+            </span>
 
           </div>
 

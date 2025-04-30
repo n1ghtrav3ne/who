@@ -8,7 +8,7 @@ const test=ref('')
 
     <span class="text-2xl font-bold">آدرس جدید</span>
 
-    <TheTextArea v-model="textArea" placeholder="نشانی پستی" />
+    <TheTextArea title="نشانی پستی" v-model="textArea" placeholder="نشانی پستی" />
 
     <TheSelect class="w-full" title="استان" default-label="استان" v-model="test" />
 

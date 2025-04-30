@@ -1,6 +1,7 @@
 <script setup lang="ts">
     const showNav=ref<boolean>(false);
     const showCard=ref<boolean>(false);
+    const showSearch=ref<boolean>(false)
 </script>
 
 <template>
@@ -15,7 +16,7 @@
       </div>
 
       <div>
-        <NuxtLink href="#">جستجو</NuxtLink>
+        <NuxtLink @click="showSearch=!showSearch" href="#">جستجو</NuxtLink>
       </div>
     </div>
 
@@ -47,12 +48,14 @@
         cart
       </div>
 
-      <div>
+      <div @click="showSearch=true">
         sear
       </div>
     </div>
   </div>
 
   <TheCard @close="showCard=false" class="duration-300" :class="showCard ? 'translate-x-0' : '-translate-x-full'" />
+
+  <SearchBar @close="showSearch=false" v-if="showSearch" />
 
 </template>
