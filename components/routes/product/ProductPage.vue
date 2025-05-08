@@ -52,6 +52,7 @@ const swiper = useSwiper(containerRef, {
     <div class="grid grid-cols-2 gap-4 px-4 lg:grid-cols-4 lg:gap-8">
 
       <ProductCard v-for="index in 4"
+                   :image="image2"
                    title="محصول مورد نظر کد"
                    :code="1234"
                    :available="true"

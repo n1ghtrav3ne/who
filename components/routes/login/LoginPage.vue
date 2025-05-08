@@ -40,9 +40,9 @@ const handleKeyDown = (event: KeyboardEvent) => {
             variant="bordered"
             :errorMsg="isError ? '*شماره وارد شده معتبر نیست.' : ''"
         >
-    <span @click="input=''" class="material-symbols-outlined">
-      cancel
-    </span>
+
+          <Icon icon="xCircle" @click="input=''" class="cursor-pointer" />
+
         </TheInput>
       </div>
 

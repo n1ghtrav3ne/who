@@ -31,9 +31,7 @@
                    button-type="outline">
 
           <template #prefix>
-            <span class="material-symbols-outlined">
-            cancel
-            </span>
+            <Icon icon="xCircle" weight="bold" />
           </template>
 
         </TheButton>
@@ -44,9 +42,7 @@
                    button-type="fill">
 
           <template #prefix>
-            <span class="material-symbols-outlined">
-            check_circle
-            </span>
+            <Icon icon="checkCircle" weight="bold" />
           </template>
 
         </TheButton>

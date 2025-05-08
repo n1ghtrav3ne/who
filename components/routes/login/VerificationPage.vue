@@ -18,7 +18,7 @@ const show=ref(false)
 </script>
 
 <template>
-  <div class="container w-full h-screen flex flex-col justify-center items-center">
+  <div class="px-4 w-full h-screen flex flex-col justify-center items-center">
 
     <div v-if="!show" class="flex flex-col items-center justify-center gap-8 w-full mb-32 lg:w-[25%]">
 

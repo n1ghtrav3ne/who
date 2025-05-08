@@ -24,7 +24,7 @@
 
     <TheSelect class="w-full" title="استان" default-label="استان" v-model="test" />
 
-    <TheButton class="w-full" text="ثبت آدرس" button-type="fill" size="lg" />
+    <TheButton @click="$emit('confirmed')" class="w-full" text="ثبت آدرس" button-type="fill" size="lg" />
 
   </div>
 </template>

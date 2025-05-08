@@ -14,19 +14,17 @@ const props = defineProps<{
       در حال پردازش
     </span>
 
-
-    <span v-if="props.status==='delivered'" class="material-symbols-outlined text-green-600">
-    check_circle
-    </span>
+    <Icon v-if="props.status==='delivered'"
+          color="#28A745"
+          icon="checkCircle" />
 
     <span v-if="props.status==='delivered'" class="text-sm lg:text-[16px]">
       تحویل شده
     </span>
 
-
-    <span v-if="props.status==='returned'" class="material-symbols-outlined text-error-light">
-    cycle
-    </span>
+    <Icon v-if="props.status==='returned'"
+          icon="repeat"
+          color="#DC3545" />
 
     <span v-if="props.status==='returned'" class="text-sm lg:text-[16px]">
       مرجوع شده

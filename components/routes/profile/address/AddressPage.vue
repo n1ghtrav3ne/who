@@ -2,7 +2,7 @@
 import Detail from "~/components/routes/profile/address/Detail.vue";
 import AddInfo from "~/components/routes/profile/address/AddInfo.vue";
 
-const viewMode = ref<'detail' | 'add' | 'empty'>('detail')
+const viewMode = ref<'detail' | 'add' | 'empty'>('detail');
 
 const popUpStatus=ref(false)
 </script>
@@ -19,18 +19,16 @@ const popUpStatus=ref(false)
                  button-type="outline"
       >
         <template #prefix>
-          <span class="material-symbols-outlined">
-          location_on
-          </span>
+          <Icon icon="mapPinLine" />
         </template>
 
       </TheButton>
 
     </div>
 
-    <Detail @change="popUpStatus=true" v-if="viewMode==='detail'" />
+    <Detail @edit="viewMode='add'" @change="popUpStatus=true" v-if="viewMode==='detail'" />
 
-    <AddInfo v-if="viewMode==='add'" />
+    <AddInfo @confirmed="viewMode='detail'" v-if="viewMode==='add'" />
 
     <span v-if="viewMode==='empty'" class="text-[16px] mx-auto mt-10">هنوز آدرس ثبت نکردید.</span>
 

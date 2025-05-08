@@ -28,21 +28,19 @@ const toggleIndex=(index:number)=>{
 
     </div>
 
-    <div v-if="available" v-for="item in 3" class="container flex flex-col gap-3 border-b">
+    <div @click="useRouter().push('/order-detail/1')" v-if="available" v-for="item in 3" class="container flex flex-col gap-3 border-b">
 
       <div class="flex flex-row justify-between w-full text-sm lg:text-[16px]">
 
         <span>کد سفارش: ۱۲۳۴</span>
 
-        <span class="material-symbols-rounded">
-        arrow_back_ios
-        </span>
+        <Icon icon="caretLeft" />
 
       </div>
 
       <div class="flex flex-row w-full text-sm lg:text-[16px]">
 
-        <ProcessStatus status="delivered" />
+        <ProcessStatus status="returned" />
 
         <span class="text-sm text-neutral-400 w-full lg:text-[16px]">
         ۲۹ بهمن ۱۴۰۳

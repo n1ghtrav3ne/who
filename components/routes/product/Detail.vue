@@ -6,6 +6,16 @@ const properties=ref(['مشخصات محصول','سایز ها','جنس محصو
 const props=defineProps({
   available:Boolean
 })
+
+const selectedSize = ref('')
+
+const items=reactive([
+  {size:'M',height:'100cm',width:'100cm'},
+  {size:'L',height:'100cm',width:'100cm'},
+  {size:'XL',height:'100cm',width:'100cm'},
+  {size:'XXL',height:'100cm',width:'100cm'},
+  {size:'100cm',height:'100cm',width:'100cm'},
+])
 </script>
 
 <template>
@@ -29,11 +39,11 @@ const props=defineProps({
 
       <div class="flex flex-col gap-4">
 
-        <TheSelect title="انتخاب سایز" default-label="L (Large)" model-value="">
-          <template #options>
-
-            <span v-for="index in 3">md</span>
-
+        <TheSelect v-model="selectedSize" title="انتخاب سایز" default-label="L (Large)">
+          <template #options="{ selectOption }">
+            <div v-for="size in ['S', 'M', 'L']" :key="size" @click="selectOption(size, size)">
+              {{ size }}
+            </div>
           </template>
         </TheSelect>
 
@@ -45,27 +55,51 @@ const props=defineProps({
       ۱,400,000 تومان
       </span>
 
-      <div class="flex flex-row justify-between items-center">
+      <div class="flex flex-row gap-7 justify-between items-center">
 
-        <TheButton :text="number">
-          <template #prefix>
-            <span @click="number++" class="material-symbols-outlined">
-            add
-            </span>
-          </template>
+        <div class="flex flex-row gap-4">
 
-          <template #suffix>
-            <span @click="number--" class="material-symbols-outlined">
-            remove
-            </span>
-          </template>
-        </TheButton>
+          <Icon @click="number++" icon="plus" color="#0A0A0A" weight="bold" />
+
+          <span>{{number}}</span>
+
+          <Icon @click="number > 0 ? number-- : null" icon="minus" color="#0A0A0A" weight="bold" />
+
+        </div>
 
         <TheButton button-type="fill" text="افزودن به سبد خرید" size="lg" />
 
     </div>
 
-    <OpeningButton text="مشخصات" :items="properties" />
+      <OpeningButton text="مشخصات" :items="properties">
+
+        <div class="flex flex-col w-[300px] lg:w-[400px]">
+
+          <div class="bg-gray-200 px-6 py-3 flex flex-row justify-between border-b border-b-gray-200 text-sm font-light text-gray-500">
+
+            <span>سایز</span>
+
+            <span>قد کار</span>
+
+            <span>عرض شانه</span>
+
+          </div>
+
+          <div v-for="(item,index) in items"
+               :key="index"
+               class="flex flex-row w-full py-4 px-6 text-gray-500 justify-between border-b border-b-gray-200">
+
+            <span>{{item.size}}</span>
+
+            <span>{{item.height}}</span>
+
+            <span>{{item.width}}</span>
+
+          </div>
+
+        </div>
+
+      </OpeningButton>
 
     </div>
 
@@ -76,9 +110,7 @@ const props=defineProps({
                size="lg">
 
       <template #suffix>
-        <span class="material-symbols-outlined">
-        notifications_active
-        </span>
+        <Icon icon="bellRinging" />
       </template>
 
     </TheButton>

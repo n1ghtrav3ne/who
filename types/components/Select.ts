@@ -1,5 +1,5 @@
 export interface SelectProps{
-    title:string
+    title?:string
     defaultLabel:string
     bottomLabel?:string
     disabled?:boolean

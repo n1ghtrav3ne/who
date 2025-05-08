@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import model from "~/assets/image/model1.png"
 import ProcessBar from "~/components/routes/profile/order-detail/ProcessBar.vue";
+import {use} from "h3";
 </script>
 
 <template>
@@ -8,9 +9,7 @@ import ProcessBar from "~/components/routes/profile/order-detail/ProcessBar.vue"
 
     <div class="flex flex-row gap-2 items-center text-[20px] font-bold mb-4 lg:mb-0">
 
-      <span class="material-symbols-outlined">
-      arrow_forward_ios
-      </span>
+      <Icon @click="useRouter().push('/profile/orders')" icon="caretRight" weight="bold" />
 
       <span>
         جزئیات سفارش

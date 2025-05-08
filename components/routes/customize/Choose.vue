@@ -7,12 +7,10 @@ const props = defineProps({
 
 const emit=defineEmits(['change'])
 
-const size = ['2xl', 'xl', 'l', 's']
 
 const router = useRouter()
 
 const selectedOption = ref<'first' | 'second' | null>(null)
-
 
 const routeHandler = () => {
   router.push(props.target as string)
@@ -22,7 +20,7 @@ const routeHandler = () => {
 </script>
 
 <template>
-  <div class="container flex flex-col gap-8 mt-10 items-center w-full h-screen">
+  <div class="px-4 flex flex-col gap-8 mt-10 items-center w-full h-screen">
 
     <div class="flex text-center">
       <span class="text-2xl">
@@ -47,8 +45,10 @@ const routeHandler = () => {
                  title="سایز لباس (بالا تنه) خود را وارد کنید"
                  :disabled="selectedOption !== 'first'"
                  model-value="">
-        <template #options>
-          <span v-for="item in size" :key="item">{{ item }}</span>
+        <template #options="{ selectOption }">
+          <div v-for="size in ['S', 'M', 'L']" :key="size" @click="selectOption(size, size)">
+            {{ size }}
+          </div>
         </template>
       </TheSelect>
 
@@ -69,10 +69,13 @@ const routeHandler = () => {
                  title="سایز لباس (بالا تنه) خود را وارد کنید"
                  :disabled="selectedOption !== 'second'"
                  model-value="">
-        <template #options>
-          <span v-for="item in size" :key="item">{{ item }}</span>
+        <template #options="{ selectOption }">
+          <div v-for="size in ['S', 'M', 'L']" :key="size" @click="selectOption(size, size)">
+            {{ size }}
+          </div>
         </template>
       </TheSelect>
+
     </div>
 
     <div class="flex flex-row gap-4 lg:gap-2 w-full md:w-[25%]">

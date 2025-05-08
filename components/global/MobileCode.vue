@@ -52,7 +52,7 @@ const updateModel=async()=>{
 <template>
     <div dir="ltr">
         <div class="flex flex-row-reverse gap-2">
-            <div class="min-w-28 w-6" v-for="(item, i) in maxCharachters / characterPerInput" :key="i">
+            <div class="w-fit" v-for="(item, i) in maxCharachters / characterPerInput" :key="i">
                 <input
                     :ref="(el) => inputs[i] = (el as HTMLInputElement)"
                     :maxlength="characterPerInput"

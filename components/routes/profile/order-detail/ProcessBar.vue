@@ -11,7 +11,6 @@ const props = defineProps<{
 <template>
   <div class="container flex flex-col gap-3 w-full lg:w-[50%]">
 
-
       <div class="w-full h-[8px] bg-neutral-100 overflow-hidden">
 
         <div
@@ -24,16 +23,15 @@ const props = defineProps<{
         ></div>
       </div>
 
-
     <div v-if="status==='delivered'" class="flex flex-row justify-between items-center">
 
       <div class="text-sm text-success-light">
         تحویل به مشتری
       </div>
 
-      <span class="material-symbols-outlined text-success-light">
-      check_circle
-      </span>
+      <Icon class="cursor-pointer"
+            icon="checkCircle"
+            color="#28A745" />
 
     </div>
 
@@ -43,9 +41,7 @@ const props = defineProps<{
         در حال پردازش...
       </div>
 
-      <span class="material-symbols-outlined">
-      cycle
-      </span>
+      <Icon icon="repeat" />
 
     </div>
 
@@ -55,9 +51,7 @@ const props = defineProps<{
         لغو شده
       </div>
 
-      <span class="material-symbols-outlined text-error-light">
-      cancel
-      </span>
+      <Icon icon="xCircle" color="#DC3545" />
 
     </div>
 

@@ -31,7 +31,11 @@ const show=ref(false);
 
         <span>محصولی به مورد علاقه ها اضافه نکردید.</span>
 
-        <span class="underline">مشاهده محصولات</span>
+        <span @click="useRouter().push('/category')"
+              class="underline cursor-pointer"
+        >
+          مشاهده محصولات
+        </span>
 
       </div>
 
@@ -57,7 +61,11 @@ const show=ref(false);
 
         <span>هنوز خرید نکرده اید!</span>
 
-        <span class="underline">خرید کنید</span>
+        <span @click="useRouter().push('/category')"
+              class="underline cursor-pointer"
+        >
+          خرید کنید
+        </span>
 
       </div>
 

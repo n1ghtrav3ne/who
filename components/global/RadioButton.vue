@@ -14,13 +14,13 @@ const props = defineProps({
 
     <div
         @click="$emit('change')"
-        class="min-w-4 min-h-4 select-none cursor-pointer rounded-full flex justify-center p border-2 border-neutral-500 duration-200 items-center"
+        class="min-w-4 min-h-4 select-none cursor-pointer rounded-full flex justify-center border-2 border-neutral-500 duration-200 items-center"
         :class="{
         'border-neutral-950': isChecked,
         '!border-neutral-400 !cursor-not-allowed': disabled,
       }"
     >
-      <div class="rounded-full bg-neutral-950 min-h-2 min-w-2 invisible" :class="{'!visible': isChecked}"></div>
+      <div class="rounded-full mx-auto bg-neutral-950 min-h-2 min-w-2 invisible" :class="{'!visible': isChecked}"></div>
     </div>
 
     <span

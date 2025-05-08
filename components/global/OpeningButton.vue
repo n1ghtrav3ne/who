@@ -16,17 +16,13 @@
 <template>
   <div class="flex flex-col w-fit cursor-pointer select-none">
 
-    <div @click="active" class="flex flex-row text-sm lg:text-[16px]">
+    <div @click="active" class="flex flex-row text-sm gap-1 items-center lg:text-[16px]">
 
       <span>{{text}}</span>
 
-      <span v-if="show" class="material-symbols-rounded">
-      remove
-      </span>
+      <Icon v-if="show" icon="minus" :size="20" weight="bold" />
 
-      <span v-else class="material-symbols-rounded">
-      add
-      </span>
+      <Icon v-else icon="plus" :size="20" weight="bold" />
 
     </div>
 
@@ -39,6 +35,8 @@
       </span>
 
       </div>
+
+      <slot />
 
     </div>
 

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const items=reactive([
-  {icon:'pedal_bike',title:'کرمان'},
-  {icon:'mail',title:'۷۶۱۸۹۸۶۵۳۳'},
-  {icon:'call',title:'۰۹۱۲ ۳۴۵ ۶۷۸۹'},
-  {icon:'id_card',title:'محمد حسینی پور'},
+  {icon:'signpost',title:'کرمان'},
+  {icon:'Envelope',title:'۷۶۱۸۹۸۶۵۳۳'},
+  {icon:'Phone',title:'۰۹۱۲ ۳۴۵ ۶۷۸۹'},
+  {icon:'IdentificationCard',title:'محمد حسینی پور'},
 ])
 
 </script>
@@ -19,9 +19,7 @@ const items=reactive([
            :key="index"
            class="flex flex-row items-center gap-2">
 
-        <span class="material-symbols-outlined">
-        {{item.icon}}
-        </span>
+        <Icon :icon="item.icon" />
 
         <span>{{item.title}}</span>
 
@@ -31,11 +29,9 @@ const items=reactive([
 
     <div class="flex flex-row gap-4 w-full">
 
-      <TheButton text="ویرایش آدرس" button-type="outline">
+      <TheButton @click="$emit('edit')" text="ویرایش آدرس" button-type="outline">
         <template #prefix>
-          <span class="material-symbols-outlined">
-          edit
-          </span>
+          <Icon icon="PencilSimple" />
         </template>
       </TheButton>
 
@@ -44,9 +40,7 @@ const items=reactive([
                  button-type="outline">
 
         <template #prefix>
-          <span class="material-symbols-outlined">
-          delete
-          </span>
+          <Icon icon="trash" />
         </template>
 
       </TheButton>
