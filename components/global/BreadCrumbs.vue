@@ -28,22 +28,24 @@ const props=defineProps({
        :class="{'text-sm':size=='sm'}">
     <div>
       <NuxtLink to="/public" class="flex flex-row items-center gap-2">
-        <span class="material-symbols-outlined">
-        home
-        </span>
+        <Icon icon="house" />
         <span>خانه</span>
       </NuxtLink>
     </div>
 
-    <span class="material-symbols-outlined text-sm text-neutral-500 pt-1"> arrow_back_ios </span>
+    <Icon icon="caretLeft"
+          color="#737993"
+          :size="18" />
 
-    <div v-for="(crumb, index) in crumbs" :key="index" class="flex items-center cursor-pointer">
+    <div v-for="(crumb, index) in crumbs" :key="index" class="flex items-center gap-1 cursor-pointer">
       <div @click="useRouter().push(crumb.path)" :class="{ 'text-neutral-500': index === crumbs.length - 1 }">
         {{ crumb.title }}
       </div>
-      <span v-if="index !== crumbs.length - 1" class="material-symbols-outlined text-sm text-neutral-500 pt-1">
-        arrow_back_ios
-      </span>
+      <Icon icon="caretLeft"
+            color="#737993"
+            :size="18"
+            v-if="index !== crumbs.length - 1" />
+
     </div>
   </div>
 </template>

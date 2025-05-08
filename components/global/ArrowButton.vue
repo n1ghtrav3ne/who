@@ -7,7 +7,7 @@ const props=defineProps({
     type:Array,
   },
   size:{
-    type:String as ()=> textSize,
+    type:String as ()=> TextSize,
     default:"desktop"
   },
   text:String
@@ -23,13 +23,11 @@ const active=()=>{
 <template>
   <div class="flex flex-col w-fit cursor-pointer select-none">
 
-    <div @click="active" class="flex flex-row text-sm" :class="{'text-xs':size==='mobile'}">
+    <div @click="active" class="flex flex-row items-center gap-1 text-sm" :class="{'text-xs':size==='mobile'}">
 
       <span>{{text}}</span>
 
-      <span class="material-symbols-rounded">
-      keyboard_arrow_down
-      </span>
+      <Icon icon="caretDown" :size="16" />
 
     </div>
 

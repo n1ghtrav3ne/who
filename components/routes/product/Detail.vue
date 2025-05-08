@@ -19,53 +19,49 @@ const props=defineProps({
 
       <TheButton text="افزودن به مورد علاقه">
         <template #suffix>
-          <span class="material-symbols-outlined">
-          favorite
-          </span>
+          <Icon icon="heart" />
         </template>
       </TheButton>
 
     </div>
-
 
     <div v-if="available" class="flex flex-col gap-9">
 
+      <div class="flex flex-col gap-4">
 
-    <div class="flex flex-col gap-4">
+        <TheSelect title="انتخاب سایز" default-label="L (Large)" model-value="">
+          <template #options>
 
-      <TheSelect title="انتخاب سایز" default-label="L (Large)" model-value="">
-        <template #options>
+            <span v-for="index in 3">md</span>
 
-          <span v-for="index in 3">md</span>
+          </template>
+        </TheSelect>
 
-        </template>
-      </TheSelect>
+        <TheLink text="راهنمای سایز" />
 
-      <TheLink text="راهنمای سایز" />
+      </div>
 
-    </div>
+      <span class="text-[16px] font-light">
+      ۱,400,000 تومان
+      </span>
 
-    <span class="text-[16px] font-light">
-    ۱,400,000 تومان
-    </span>
+      <div class="flex flex-row justify-between items-center">
 
-    <div class="flex flex-row justify-between items-center">
+        <TheButton :text="number">
+          <template #prefix>
+            <span @click="number++" class="material-symbols-outlined">
+            add
+            </span>
+          </template>
 
-      <TheButton :text="number">
-        <template #prefix>
-          <span @click="number++" class="material-symbols-outlined">
-          add
-          </span>
-        </template>
+          <template #suffix>
+            <span @click="number--" class="material-symbols-outlined">
+            remove
+            </span>
+          </template>
+        </TheButton>
 
-        <template #suffix>
-          <span @click="number--" class="material-symbols-outlined">
-          remove
-          </span>
-        </template>
-      </TheButton>
-
-      <TheButton button-type="fill" text="افزودن به سبد خرید" size="lg" />
+        <TheButton button-type="fill" text="افزودن به سبد خرید" size="lg" />
 
     </div>
 

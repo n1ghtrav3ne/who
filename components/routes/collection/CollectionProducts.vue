@@ -23,12 +23,11 @@
         <span class="text-[16px] lg:text-[32px] font-light text-neutral-50">Urban Style</span>
       </Poster>
 
-      <div class="absolute flex flex-col items-center justify-end text-sm lg:text-[20px] lg:font-bold text-neutral-50 w-full h-full bottom-8">
+      <div class="absolute flex flex-col gap-2 items-center justify-end text-sm lg:text-[20px] lg:font-bold text-neutral-50 w-full h-full bottom-8">
         <span>اسکرول کنید</span>
 
-        <span class="material-symbols-rounded">
-        south
-        </span>
+        <Icon icon="arrowDown" />
+
       </div>
 
     </div>
@@ -37,9 +36,9 @@
       <FilterList />
     </div>
 
-    <div class="container grid grid-cols-2 lg:grid-cols-4 gap-4 gap-y-8">
+    <div class="p-6 grid grid-cols-2 lg:grid-cols-4 gap-4 gap-y-8">
 
-      <ProductCard v-for="index in 8" title="محصول مورد نظر کد" :code="1234" :available="true" :price="30000" :discount-price="15000" />
+      <ProductCard v-for="index in 4" :image="female" title="محصول مورد نظر کد" :code="1234" :available="true" :price="30000" :discount-price="15000" />
 
     </div>
 

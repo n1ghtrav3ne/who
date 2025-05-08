@@ -8,11 +8,11 @@
   <div class="bg-white shadow-md grid grid-cols-12 items-center gap-2 py-4 px-3">
     <div class="col-span-4 hidden md:flex gap-5">
       <div>
-        <NuxtLink href="#">کالکشن</NuxtLink>
+        <NuxtLink href="/collection">کالکشن</NuxtLink>
       </div>
 
       <div>
-        <NuxtLink href="#">دسته بندی</NuxtLink>
+        <NuxtLink href="/category">دسته بندی</NuxtLink>
       </div>
 
       <div>
@@ -29,7 +29,7 @@
 
     </div>
 
-    <div class="col-span-4 text-center">
+    <div @click="useRouter().push('/')" class="col-span-4 text-center cursor-pointer">
       WHO
     </div>
 
@@ -38,7 +38,7 @@
         سبد خرید
       </div>
 
-      <div class="cursor-pointer">
+      <div @click="useRouter().push('/profile/dashboard')" class="cursor-pointer">
         پروفایل
       </div>
     </div>

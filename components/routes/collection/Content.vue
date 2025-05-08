@@ -9,8 +9,8 @@ import slide from "assets/image/slide.jpg"
 <template>
   <div class="grid grid-cols-2 w-full mt-5">
 
-    <Poster :img="male">
-      <div class="w-full h-full border flex flex-col items-center relative justify-center text-neutral-50">
+    <Poster @click="useRouter().push('/collection/products')" :img="male">
+      <div class="w-full h-full border flex flex-col items-center relative justify-center text-neutral-50 cursor-pointer">
 
         <span class="text-[16px] lg:text-[64px] font-light">
           کالکشن جدید ۲۰۲۵
@@ -23,8 +23,8 @@ import slide from "assets/image/slide.jpg"
       </div>
     </Poster>
 
-    <Poster :img="female">
-      <div class="w-full h-full border flex flex-col items-center relative justify-center text-neutral-50">
+    <Poster @click="useRouter().push('/collection/products')" :img="female">
+      <div class="w-full h-full border flex flex-col items-center relative justify-center text-neutral-50 cursor-pointer">
 
         <span class="text-[16px] lg:text-[64px] font-light">
           کالکشن جدید ۲۰۲۵
@@ -37,7 +37,7 @@ import slide from "assets/image/slide.jpg"
       </div>
     </Poster>
 
-    <Poster :img="slide" class="col-span-2">
+    <Poster @click="useRouter().push('/collection/products')" :img="slide" class="col-span-2 mt-6 cursor-pointer">
       <span class="w-full h-full flex justify-center items-center text-2xl lg:text-[64px] font-light text-neutral-50">
         کالکشن جدید ۲۰۲۵
       </span>

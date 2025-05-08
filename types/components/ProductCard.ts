@@ -4,4 +4,6 @@ export interface ProductCardProps{
     discountPrice:number
     price:number
     available:boolean
+    image?: string
+    status?:string
 }
