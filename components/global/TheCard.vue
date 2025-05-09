@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import model from "~/assets/image/model1.png"
+import Img from "~/assets/image/productImg.jpg"
 
 const detail=reactive(
     {
@@ -13,13 +13,11 @@ const number=ref(0)
 </script>
 
 <template>
-  <div class="fixed flex flex-row-reverse bg-neutral-400 w-full h-screen z-50 top-0 bg-opacity-40">
+  <div @click="$emit('close')" class="fixed flex flex-row-reverse bg-neutral-400 w-full h-screen z-50 top-0 bg-opacity-40">
 
     <div class="flex flex-col gap-5 items-start w-full bg-white lg:w-[30%]">
 
-      <span @click="$emit('close')" class="material-symbols-outlined mr-[5%] mt-7 cursor-pointer">
-      close
-      </span>
+      <Icon icon="X" @click="$emit('close')" class="mr-[5%] mt-7 cursor-pointer" />
 
       <span class="text-[32px] font-bold container">سبد خرید</span>
 
@@ -30,7 +28,7 @@ const number=ref(0)
           <div class="flex flex-row gap-2 col-span-2">
 
             <div class="w-[80px] h-[119px]">
-              <Poster :img="model" />
+              <Poster :img="Img" />
             </div>
 
             <div class="flex flex-col gap-2 text-sm">
@@ -51,17 +49,15 @@ const number=ref(0)
 
             <div class="flex flex-row justify-between text-[16px] cursor-pointer select-none">
 
-              <span @click="number++">+</span>
+              <Icon icon="plus" @click="number++" weight="bold" />
 
               <span>{{number}}</span>
 
-              <span @click="number > 0 ? number-- : null">-</span>
+              <Icon icon="minus" weight="bold" @click="number > 0 ? number-- : null" />
 
             </div>
 
-            <span class="material-symbols-outlined cursor-pointer">
-            delete
-            </span>
+            <Icon icon="trash" class="mr-auto" />
 
           </div>
 
@@ -82,7 +78,7 @@ const number=ref(0)
 
         </div>
 
-        <TheButton class="w-full" text="ادامه فرایند خرید" button-type="fill" size="lg" />
+        <TheButton @click="useRouter().push('/card')" class="w-full" text="ادامه فرایند خرید" button-type="fill" size="lg" />
 
       </div>
 

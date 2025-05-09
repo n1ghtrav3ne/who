@@ -22,9 +22,7 @@ const navigate = () => {
 
         <span class="text-[18px]">اضافه کردن سایز</span>
 
-        <span class="material-symbols-outlined">
-        add_circle
-        </span>
+        <Icon icon="plusCircle" weight="bold" />
 
       </div>
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import model from "~/assets/image/model1.png"
+import model from "~/assets/image/productImg.jpg"
 
 const number=ref(0)
 </script>
@@ -42,7 +42,7 @@ const number=ref(0)
           </div>
 
 
-          <div class="flex flex-col justify-between">
+          <div class="flex flex-col mr-auto justify-between">
 
             <div class="flex flex-row gap-4 text-[16px] cursor-pointer select-none">
 
@@ -54,9 +54,7 @@ const number=ref(0)
 
             </div>
 
-            <span class="material-symbols-outlined cursor-pointer">
-            delete
-          </span>
+            <Icon icon="trash" class="mr-auto" />
 
           </div>
 

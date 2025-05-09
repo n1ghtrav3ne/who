@@ -21,23 +21,25 @@ const swiper = useSwiper(containerRef, {
 
       <swiper-slide v-for="index in 3">
 
-        <Poster @click="useRouter().push('/collection/products')" :img="CollectionImg">
+        <div class="h-auto w-full">
+          <Poster @click="useRouter().push('/collection/products')" :img="CollectionImg">
 
-          <div class="flex flex-col h-full justify-center items-center w-full">
+            <div class="flex flex-col h-full justify-center items-center w-full">
 
-            <span class="text-[40px] lg:text-[64px] text-neutral-50 font-light w-full h-full items-center flex justify-center">کالکشن جدید ۲۰۲۵</span>
+              <span class="text-[40px] lg:text-[64px] text-neutral-50 font-light w-full h-full items-center flex justify-center">کالکشن جدید ۲۰۲۵</span>
 
-            <div class="flex flex-col items-center gap-12 relative mb-4">
+              <div class="flex flex-col items-center gap-12 relative mb-4">
 
-              <span class="text-white text-[18px] underline">خرید کنید</span>
+                <span class="text-white text-[18px] underline">خرید کنید</span>
 
-              <Icon icon="arrowDown" color="#ffffff" :size="32" />
+                <Icon icon="arrowDown" color="#ffffff" :size="32" />
+
+              </div>
 
             </div>
 
-          </div>
-
-        </Poster>
+          </Poster>
+        </div>
 
       </swiper-slide>
 

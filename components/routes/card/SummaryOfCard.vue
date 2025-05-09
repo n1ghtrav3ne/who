@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="container flex flex-col gap-8 w-full lg:w-[30%]">
+  <div class="flex flex-col gap-8 w-full lg:w-[30%]">
 
     <span class="text-[20px] font-bold">مجموع سبد خرید</span>
 

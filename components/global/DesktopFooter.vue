@@ -5,7 +5,7 @@
 <template>
   <div class="flex flex-col gap-2 w-full px-10 pb-8 pt-[72px]">
 
-    <div class="flex flex-row justify-between items-center text-[16px]">
+    <div class="flex flex-row justify-between items-center cursor-pointer text-[16px]">
 
       <div class="flex flex-row items-center gap-10">
 
@@ -21,9 +21,9 @@
 
       <div class="flex flex-row items-center gap-10">
 
-        <span>تماس با ما</span>
+        <span @click="useRouter().push('/contact')">تماس با ما</span>
 
-        <span>درباره ما</span>
+        <span @click="useRouter().push('/about')">درباره ما</span>
 
       </div>
 

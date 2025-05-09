@@ -11,7 +11,7 @@ const discountPercent = computed(() =>
 <template>
   <div @click="useRouter().push(`/product/${code}`)" class="flex flex-col gap-2 cursor-pointer">
     <div
-        class="bg-neutral-200 h-80 w-full rounded-xl overflow-hidden relative flex items-center justify-center"
+        class="bg-neutral-200 h-[180px] w-full rounded-xl overflow-hidden relative flex items-center justify-center lg:h-80"
         :class="{ 'opacity-40': !available }"
     >
       <!-- PRODUCT IMAGE -->
@@ -19,7 +19,7 @@ const discountPercent = computed(() =>
           v-if="props.image"
           :src="props.image"
           alt="product"
-          class="h-full w-full object-fill"
+          class="h-full w-full object-fit"
       />
       <div v-else class="text-neutral-400 text-sm">عکس موجود نیست</div>
 

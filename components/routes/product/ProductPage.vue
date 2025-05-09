@@ -2,6 +2,7 @@
 import image1 from "assets/image/image1.jpg";
 import image2 from "assets/image/image2.jpg";
 import image3 from "assets/image/image3.jpg";
+import img from "~/assets/image/productImg.jpg"
 import Detail from "~/components/routes/product/Detail.vue";
 import ProductCard from "~/components/global/ProductCard.vue";
 
@@ -52,7 +53,7 @@ const swiper = useSwiper(containerRef, {
     <div class="grid grid-cols-2 gap-4 px-4 lg:grid-cols-4 lg:gap-8">
 
       <ProductCard v-for="index in 4"
-                   :image="image2"
+                   :image="img"
                    title="محصول مورد نظر کد"
                    :code="1234"
                    :available="true"

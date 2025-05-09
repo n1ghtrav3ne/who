@@ -2,6 +2,7 @@
 
 import Order from "~/components/routes/profile/dashboard/Order.vue";
 import ProductCard from "~/components/global/ProductCard.vue";
+import img from "~/assets/image/productImg.jpg"
 
 const show=ref(false);
 </script>
@@ -17,7 +18,8 @@ const show=ref(false);
 
       <div v-if="show"
            class="flex flex-nowrap gap-8 select-none pr-5 overflow-x-auto lg:gap-12 w-full">
-        <ProductCard v-for="index in 8"
+        <ProductCard :image="img"
+                     v-for="index in 8"
                      :key="index"
                      title="محصول مورد نظر کد"
                      :code="1234"
@@ -47,7 +49,8 @@ const show=ref(false);
 
       <div v-if="show"
            class="flex flex-nowrap gap-8 select-none pr-5 overflow-x-auto lg:gap-12 w-full">
-        <ProductCard v-for="index in 8"
+        <ProductCard :image="img"
+                     v-for="index in 8"
                      :key="index"
                      title="محصول مورد نظر کد"
                      :code="1234"

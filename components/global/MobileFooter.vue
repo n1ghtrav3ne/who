@@ -11,8 +11,8 @@
     </div>
 
     <div class="flex flex-col gap-6 text-[16px]">
-      <span>درباره ما</span>
-      <span>تماس با ما</span>
+      <span @click="useRouter().push('/about')">درباره ما</span>
+      <span @click="useRouter().push('/contact')">تماس با ما</span>
     </div>
 
     <div class="flex flex-col gap-2 font-light text-xs">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import img from "~/assets/image/image1.jpg"
+import img from "~/assets/image/productImg.jpg"
 import ProductCard from "~/components/global/ProductCard.vue";
 import ThePagination from "~/components/global/ThePagination.vue";
 </script>

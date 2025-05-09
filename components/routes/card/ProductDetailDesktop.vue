@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import model from "~/assets/image/model1.png"
+import model from "~/assets/image/productImg.jpg"
 
 const number=ref(0)
 </script>
@@ -56,9 +56,7 @@ const number=ref(0)
 
         <span>۲,۴00,00۰ تومان</span>
 
-        <span class="material-symbols-outlined cursor-pointer">
-          delete
-        </span>
+        <Icon icon="trash" />
 
       </div>
 

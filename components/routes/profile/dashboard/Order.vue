@@ -13,9 +13,7 @@
 
         <span class="text-[16px] underline">مشاهده همه</span>
 
-        <span class="material-symbols-outlined">
-          arrow_back_ios
-          </span>
+        <Icon icon="caretLeft" />
 
       </div>
 

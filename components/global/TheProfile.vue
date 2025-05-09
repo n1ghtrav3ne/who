@@ -3,13 +3,13 @@ const router = useRouter()
 const route = useRoute()
 
 const items = reactive([
-  { name: 'پیشخوان', path: 'dashboard' },
-  { name: 'سفارش های من', path: 'orders' },
-  { name: 'سایز های من', path: 'size' },
-  { name: 'مورد علاقه ها', path: 'favorites' },
-  { name: 'آدرس ها', path: 'address' },
-  { name: 'اطلاعات حساب کاربری', path: 'information' },
-  { name: 'خروج', path: '' },
+  { name: 'پیشخوان', path: 'dashboard',icon:'house'},
+  { name: 'سفارش های من', path: 'orders',icon:'shoppingBagOpen'},
+  { name: 'سایز های من', path: 'size',icon:'ruler'},
+  { name: 'مورد علاقه ها', path: 'favorites',icon:'heart'},
+  { name: 'آدرس ها', path: 'address',icon:'Signpost'},
+  { name: 'اطلاعات حساب کاربری', path: 'information',icon:'User'},
+  { name: 'خروج', path: '',icon:'signOut'},
 ])
 
 const showPopup = ref(false)
@@ -49,9 +49,8 @@ const selectedIndex = computed(() => {
            :class="{'border-[3px]':selectedIndex === index}"
            class="w-full px-6 py-3 flex flex-row gap-2 items-center text-[16px] border border-neutral-950 select-none"
       >
-        <span class="material-symbols-outlined">
-        home
-        </span>
+
+        <Icon :icon="item.icon" />
 
         {{item.name}}
       </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const emit=defineEmits(['close'])
+
 </script>
 
 <template>
@@ -7,9 +7,7 @@ const emit=defineEmits(['close'])
 
     <div class="flex flex-row h-[64px] justify-between items-center w-full">
 
-      <span @click="emit('close')" class="material-symbols-rounded">
-      close
-      </span>
+      <Icon icon="x" @click="$emit('close')" />
 
       <span class="text-2xl font-light">
         WHO
@@ -17,13 +15,9 @@ const emit=defineEmits(['close'])
 
       <div class="flex flex-row items-center gap-[18px]">
 
-        <span class="material-symbols-rounded">
-        local_mall
-        </span>
+        <Icon @click="$emit('card')" icon="shoppingBag" />
 
-        <span class="material-symbols-rounded">
-        search
-        </span>
+        <Icon @click="$emit('search')" icon="MagnifyingGlass" />
 
       </div>
 
@@ -33,21 +27,17 @@ const emit=defineEmits(['close'])
 
       <div class="flex flex-row gap-2 px-6">
 
-        <span>دسته بندی</span>
+        <NuxtLink to="/category">دسته بندی</NuxtLink>
 
-        <span class="material-symbols-rounded">
-        keyboard_arrow_down
-        </span>
+        <Icon icon="caretDown" :size="20" />
 
       </div>
 
       <div class="flex flex-row gap-2 px-6">
 
-        <span>کالکشن‌ها</span>
+        <NuxtLink to="/collection">کالکشن‌ها</NuxtLink>
 
-        <span class="material-symbols-rounded">
-        keyboard_arrow_down
-        </span>
+        <Icon icon="caretDown" :size="20" />
 
       </div>
 
@@ -55,11 +45,11 @@ const emit=defineEmits(['close'])
 
     <div class="flex flex-col gap-4 mt-12 text-sm">
 
-      <NuxtLink to="#">حساب کاربری</NuxtLink>
+      <NuxtLink to="/profile/dashboard">حساب کاربری</NuxtLink>
 
-      <NuxtLink to="#">درباره ما</NuxtLink>
+      <NuxtLink to="/about">درباره ما</NuxtLink>
 
-      <NuxtLink to="#">تماس با ما</NuxtLink>
+      <NuxtLink to="/contact">تماس با ما</NuxtLink>
 
       <NuxtLink to="#">پشتیبانی</NuxtLink>
 

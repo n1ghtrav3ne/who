@@ -7,6 +7,8 @@ import image3 from "assets/image/image3.jpg"
 
 import slide from "assets/image/slide.jpg"
 
+import slide2 from "assets/image/aboutImg.png"
+
 type hero ="hero1"|"hero2"
 
 const props=defineProps({
@@ -34,13 +36,23 @@ const swiper = useSwiper(containerRef, {
                       ref="containerRef"
                       :init="false">
 
-      <swiper-slide v-for="index in 3">
+      <swiper-slide>
 
-        <Poster :img="slide">
+        <div class="h-[800px]">
+          <Poster :img="slide">
+            <span class="text-[40px] lg:text-[64px] text-neutral-50 font-light w-full h-full items-center flex justify-center">کالکشن جدید ۲۰۲۵</span>
+          </Poster>
+        </div>
 
-          <span class="text-[40px] lg:text-[64px] text-neutral-50 font-light w-full h-full items-center flex justify-center">کالکشن جدید ۲۰۲۵</span>
+      </swiper-slide>
 
-        </Poster>
+      <swiper-slide>
+
+        <div class="h-[800px]">
+          <Poster :img="slide2">
+            <span class="text-[40px] lg:text-[64px] text-neutral-50 font-light w-full h-full items-center flex justify-center">کالکشن جدید ۲۰۲۵</span>
+          </Poster>
+        </div>
 
       </swiper-slide>
 

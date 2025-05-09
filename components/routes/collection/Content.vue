@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import male from "assets/image/male.jpg"
+import exam1 from "assets/image/collExam1.png"
 
-import female from "assets/image/female.jpg"
+import exam2 from "assets/image/colExam2.png"
 
-import slide from "assets/image/slide.jpg"
+import exam3 from "assets/image/model2.png"
 </script>
 
 <template>
   <div class="grid grid-cols-2 w-full mt-5">
 
-    <Poster @click="useRouter().push('/collection/products')" :img="male">
+    <Poster @click="useRouter().push('/collection/products')" :img="exam1">
       <div class="w-full h-full border flex flex-col items-center relative justify-center text-neutral-50 cursor-pointer">
 
         <span class="text-[16px] lg:text-[64px] font-light">
@@ -23,7 +23,7 @@ import slide from "assets/image/slide.jpg"
       </div>
     </Poster>
 
-    <Poster @click="useRouter().push('/collection/products')" :img="female">
+    <Poster @click="useRouter().push('/collection/products')" :img="exam2">
       <div class="w-full h-full border flex flex-col items-center relative justify-center text-neutral-50 cursor-pointer">
 
         <span class="text-[16px] lg:text-[64px] font-light">
@@ -37,11 +37,13 @@ import slide from "assets/image/slide.jpg"
       </div>
     </Poster>
 
-    <Poster @click="useRouter().push('/collection/products')" :img="slide" class="col-span-2 mt-6 cursor-pointer">
+    <div class="col-span-2 mt-6 cursor-pointer h-[800px]">
+      <Poster @click="useRouter().push('/collection/products')" :img="exam3">
       <span class="w-full h-full flex justify-center items-center text-2xl lg:text-[64px] font-light text-neutral-50">
         کالکشن جدید ۲۰۲۵
       </span>
-    </Poster>
+      </Poster>
+    </div>
 
   </div>
 </template>

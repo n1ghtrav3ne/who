@@ -27,8 +27,18 @@
         <TheTextArea title="متن توضیحات" placeholder="موضوع" v-model="test" />
       </div>
 
-      <div class="w-full lg:w-[20%]">
+      <div class="w-full lg:w-[10%]">
         <TheButton class="w-full" text="ارسال" button-type="fill" size="lg" />
+      </div>
+
+      <div class="flex flex-row gap-4 text-sm">
+
+        <span>پشتیبانی</span>
+
+        <span>اینستاگرام</span>
+
+        <Icon icon="instagramLogo" color="#000000" />
+
       </div>
 
     </div>
