@@ -1,21 +1,22 @@
 <script setup lang="ts">
 import Img from "~/assets/image/productImg.jpg"
 
+const prop=defineProps(['show'])
+
 const detail=reactive(
     {
       code:1234,
       style:"مشکی - XS",
       price:"۱,200,00۰"
     }
-    )
+)
 
 const number=ref(0)
 </script>
 
 <template>
-  <div @click="$emit('close')" class="fixed flex flex-row-reverse bg-neutral-400 w-full h-screen z-50 top-0 bg-opacity-40">
-
-    <div class="flex flex-col gap-5 items-start w-full bg-white lg:w-[30%]">
+    <div class="flex flex-col duration-200 gap-5 items-start w-full bg-white lg:w-[30%]"
+         :class="show ? 'translate-x-0' : '-translate-x-full'">
 
       <Icon icon="X" @click="$emit('close')" class="mr-[5%] mt-7 cursor-pointer" />
 
@@ -83,6 +84,4 @@ const number=ref(0)
       </div>
 
     </div>
-
-  </div>
 </template>

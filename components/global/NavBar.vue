@@ -66,11 +66,15 @@ const toggleNav = () => {
   </div>
 
   <div class="pt-[55px]">
-    <TheCard
-        @close="showCard = false"
-        class="duration-300"
-        :class="showCard ? 'translate-x-0' : '-translate-x-full'"
-    />
+
+    <div @click="showCard=false"
+         class="fixed flex flex-row-reverse bg-neutral-400 w-full h-screen z-50 top-0 bg-opacity-40"
+         :class="showCard ? 'bg-opacity-45 translate-x-0' : 'bg-opacity-0 -translate-x-full'">
+      <TheCard
+          :show="showCard"
+          @close="showCard = false"
+      />
+    </div>
 
     <SearchBar @close="showSearch = false" v-if="showSearch" />
   </div>

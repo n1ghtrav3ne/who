@@ -42,7 +42,7 @@ const selectedIndex = computed(() => {
     </div>
 
 
-    <div class="flex flex-col border border-neutral-950">
+    <div class="flex flex-col border border-neutral-950 cursor-pointer">
 
       <div v-for="(item , index) in items" :key="index"
            @click="selectItem(index)"
