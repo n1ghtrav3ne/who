@@ -22,7 +22,7 @@ import ThePagination from "~/components/global/ThePagination.vue";
     </div>
 
     <div class="flex items-center flex-col w-full">
-      <ThePagination :count="8" :model-value="8"/>
+      <ThePagination :count="8" :model-value="1"/>
     </div>
 
   </div>

@@ -15,13 +15,12 @@ const swiper = useSwiper(containerRef, {
 
 <template>
   <ClientOnly>
-    <swiper-container class="h-[730px] lg:h-fit cursor-pointer"
-                      ref="containerRef"
+    <swiper-container ref="containerRef"
                       :init="false">
 
       <swiper-slide v-for="index in 3">
 
-        <div class="h-auto w-full">
+        <div class="h-auto w-full cursor-pointer">
           <Poster @click="useRouter().push('/collection/products')" :img="CollectionImg">
 
             <div class="flex flex-col h-full justify-center items-center w-full">

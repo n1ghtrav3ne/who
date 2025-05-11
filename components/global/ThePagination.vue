@@ -20,7 +20,7 @@ const emit=defineEmits<{
 const buttonRange = computed(() => {
     const start=Math.max(1,Math.min(current.value-1,props.count-props.groupSize+1));
     const end=Math.min(start+props.groupSize-1,props.count);
-    
+
     return Array.from({length:end-start+1},(_,i)=>start+i);
 });
 
@@ -46,10 +46,10 @@ const changeIndex=(i:number)=>{
             @click="changeIndex(current-1)"
 
             :class="{'cursor-[default_!important] text-neutral-200':current<=1}"
-            class="cursor-pointer select-none border flex justify-center items-center w-8 h-8 text-center border-[#E9EAEE] rounded-lg"
+            class="cursor-pointer select-none flex justify-center items-center w-8 h-8 text-center"
         >
             <!-- TODO: add icon --> 
-             R
+             <Icon icon="caretRight" :size="20" />
         </div>
 
         <div class="flex gap-2 text-md text-[#5B6176]">
@@ -95,11 +95,12 @@ const changeIndex=(i:number)=>{
 
         <div
             @click="changeIndex(current+1)"
-            class="cursor-pointer select-none border flex justify-center items-center w-8 h-8 text-center border-[#E9EAEE] rounded-lg"
+            class="cursor-pointer select-none flex justify-center items-center w-8 h-8 text-center"
             :class="{'cursor-[default_!important] text-neutral-200':current>=count}"
         >
             <!-- TODO: add icon -->
-             L
+          <Icon icon="caretLeft" :size="20" />
+
         </div>
     </div>
 </template>

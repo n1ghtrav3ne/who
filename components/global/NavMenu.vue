@@ -27,7 +27,7 @@
 
       <div class="flex flex-row gap-2 px-6">
 
-        <NuxtLink to="/category">دسته بندی</NuxtLink>
+        <NuxtLink @click="$emit('close')" to="/category">دسته بندی</NuxtLink>
 
         <Icon icon="caretDown" :size="20" />
 
@@ -35,7 +35,7 @@
 
       <div class="flex flex-row gap-2 px-6">
 
-        <NuxtLink to="/collection">کالکشن‌ها</NuxtLink>
+        <NuxtLink @click="$emit('close')" icon="x" to="/collection">کالکشن‌ها</NuxtLink>
 
         <Icon icon="caretDown" :size="20" />
 
@@ -45,11 +45,11 @@
 
     <div class="flex flex-col gap-4 mt-12 text-sm">
 
-      <NuxtLink to="/profile/dashboard">حساب کاربری</NuxtLink>
+      <NuxtLink @click="$emit('close')" to="/profile/dashboard">حساب کاربری</NuxtLink>
 
-      <NuxtLink to="/about">درباره ما</NuxtLink>
+      <NuxtLink @click="$emit('close')" to="/about">درباره ما</NuxtLink>
 
-      <NuxtLink to="/contact">تماس با ما</NuxtLink>
+      <NuxtLink @click="$emit('close')"  to="/contact">تماس با ما</NuxtLink>
 
       <NuxtLink to="#">پشتیبانی</NuxtLink>
 
