@@ -29,7 +29,7 @@ const number=ref(0)
           <div class="flex flex-row gap-2 col-span-2">
 
             <div class="w-[80px] h-[119px]">
-              <Poster :img="Img" />
+              <Poster :img="'/images/productImg.jpg'" />
             </div>
 
             <div class="flex flex-col gap-2 text-sm">

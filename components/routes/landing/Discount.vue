@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import model2 from "assets/image/model2.png";
+
 </script>
 
 <template>
   <div class="w-full h-[420px] lg:h-[380px]">
 
-    <Poster :img="model2" class="lg:bg-center">
+    <Poster :img="'/images/model2.png'" class="lg:bg-center">
 
       <div class="container flex items-center text-neutral-50 bg-neutral-950 bg-opacity-50 absolute w-full h-full top-0 right-0">
 

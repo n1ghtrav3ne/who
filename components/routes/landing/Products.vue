@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import model from "assets/image/model1.png";
-import model2 from "assets/image/model2.png";
+
 </script>
 
 <template>
   <div class="w-full h-auto flex flex-col gap-4">
     <div class="grid grid-cols-6 gap-2 w-full">
-      <poster class="col-span-6 lg:col-span-2" :img="model" />
-      <poster class="col-span-3 lg:col-span-2" :img="model2" />
-      <poster class="col-span-3 lg:col-span-2" :img="model" />
+      <poster class="col-span-6 lg:col-span-2" :img="'/images/model1.png'" />
+      <poster class="col-span-3 lg:col-span-2" :img="'/images/model2.png'" />
+      <poster class="col-span-3 lg:col-span-2" :img="'/images/model1.png'" />
     </div>
 
     <div class="flex flex-col w-full items-center lg:w-1/5 mx-auto">

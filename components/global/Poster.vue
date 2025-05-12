@@ -1,38 +1,31 @@
 <script setup lang="ts">
 
 const props = defineProps(['img']);
-const loading = ref(true);
+const isLoaded = ref(true);
 const error = ref(false);
 
 const handleImageLoad = () => {
-  loading.value = true;
+  isLoaded.value=true;
 };
 
 const handleImageError = () => {
-  loading.value = false;
-  error.value = true;
+  isLoaded.value = false;
+  error.value=true;
 };
 </script>
 
 <template>
   <div class="relative flex w-full h-full">
 
-    <img
-        v-if="loading && !error"
+    <NuxtImg
+        v-if="isLoaded"
         class="w-full h-full object-cover"
         :src="props.img"
-        alt="image"
+        alt=""
         @load="handleImageLoad"
-        @error="handleImageError"
     />
 
-    <div v-if="!loading && !error" class="w-full h-full flex justify-center bg-neutral-200 items-center">
-      <div class="spinner"></div>
-    </div>
-
-    <div v-if="error" class="w-full h-full flex justify-center bg-neutral-200 items-center">
-      <span class="text-error-light text-sm">خطا در لود عکس</span>
-    </div>
+    <div v-if="!isLoaded" class="absolute inset-0 h-32 bg-[rgba(0_0_0_.4)] animate-pulse rounded"></div>
 
     <div v-if="$slots.default" class="absolute w-full h-full flex justify-center items-center">
       <slot />

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import model from "assets/image/model1.png";
-import model2 from "assets/image/model2.png";
 import Achievements from "~/components/routes/landing/Achievements.vue";
 import Discount from "~/components/routes/landing/Discount.vue";
 import Products from "~/components/routes/landing/Products.vue";
@@ -23,9 +21,9 @@ import Products from "~/components/routes/landing/Products.vue";
 
     <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-8 h-[700px] overflow-y-auto">
 
-      <Poster class="bg-center" :img="model2" />
-      <Poster class="bg-center" :img="model" />
-      <Poster class="bg-center" :img="model2" />
+      <poster class="bg-center" :img="'/images/model1.png'" />
+      <poster class="bg-center" :img="'/images/model2.png'" />
+      <poster class="bg-center" :img="'/images/model1.png'" />
 
 
     </div>
