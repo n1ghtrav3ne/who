@@ -1,24 +1,25 @@
 <script setup lang="ts">
+
 const items=[
   {
     title:"محصولات اورجینال",
     text:"اصالت کالا تضمین‌شده، یا وجه شما بازگردانده می‌شود.",
-    icon:"check_circle"
+    icon:"ShieldTick"
   },
   {
     title:"تضمین رضایت",
     text:"اگر اندازه نبود، به‌راحتی تعویضش کن!",
-    icon:"account_circle"
+    icon:"UserTick"
   },
   {
     title:"جدید‌ترین استایل ها، هرروز",
     text:"مجموعه‌های ما همیشه به‌روز و مطابق با ترندهاست.",
-    icon:"shopping_basket"
+    icon:"ShoppingCart"
   },
   {
     title:"ارسال سریع",
     text:"سفارش‌ها رو در سریع ترین زمان ممکن دریافت کنین!",
-    icon:"delivery_truck_speed"
+    icon:"TruckFast"
   },
 ]
 </script>
@@ -28,15 +29,15 @@ const items=[
 
     <div v-for="(item,index) in items" :key="index" class="flex flex-col gap-[6px] w-[85%]">
 
-      <div class="flex flex-row gap-1 items-center">
+      <div class="flex flex-col gap-1">
 
-        <span class="material-symbols-outlined">
-          {{item.icon}}
-        </span>
+        <div class="material-symbols-outlined">
+          <VsxIcon :iconName="item.icon" :size="32" type="linear" />
+        </div>
 
-        <span class="text-sm font-bold lg:text-2xl">
+        <div class="text-sm font-bold lg:text-xl">
           {{item.title}}
-        </span>
+        </div>
 
       </div>
 
