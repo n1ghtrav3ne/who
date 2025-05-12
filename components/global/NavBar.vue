@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const show=reactive({
+const show=shallowReactive({
   nav:false,
   card:false,
   search:false,
