@@ -1,25 +1,27 @@
 <script setup lang="ts">
-const showNav = ref(false);
-const showCard = ref(false);
-const showSearch = ref(false);
+const show=reactive({
+  nav:false,
+  card:false,
+  search:false,
+})
 
 const openCard = () => {
-  showCard.value = true;
-  showSearch.value = false;
-  showNav.value = false;
+  show.card = true;
+  show.search = false;
+  show.nav = false;
 };
 
 const openSearch = () => {
-  showSearch.value = true;
-  showCard.value = false;
-  showNav.value = false;
+  show.search = !show.search;
+  show.card = false;
+  show.nav = false;
 };
 
 const toggleNav = () => {
-  showNav.value = !showNav.value;
-  if (showNav.value) {
-    showCard.value = false;
-    showSearch.value = false;
+  show.nav = !show.nav;
+  if (show.nav) {
+    show.card = false;
+    show.search = false;
   }
 };
 
@@ -35,7 +37,7 @@ const toggleNav = () => {
         <NuxtLink class="cursor-pointer" href="/category">دسته بندی</NuxtLink>
       </div>
       <div>
-        <span class="cursor-pointer" @click="openSearch">جستجو</span>
+        <span class="cursor-pointer select-none" @click="openSearch">جستجو</span>
       </div>
     </div>
 
@@ -44,9 +46,9 @@ const toggleNav = () => {
       <NavMenu
           @search="openSearch"
           @card="openCard"
-          @close="showNav = false"
+          @close="show.nav = false"
           class="duration-300"
-          :class="showNav ? 'translate-x-0' : 'translate-x-full'"
+          :class="show.nav ? 'translate-x-0' : 'translate-x-full'"
       />
     </div>
 
@@ -67,15 +69,15 @@ const toggleNav = () => {
 
   <div class="pt-[55px]">
 
-    <div @click="showCard=false"
+    <div @click="show.card=false"
          class="fixed flex flex-row-reverse bg-neutral-400 w-full h-screen z-50 top-0 bg-opacity-40"
-         :class="showCard ? 'bg-opacity-45 translate-x-0' : 'bg-opacity-0 -translate-x-full'">
+         :class="show.card ? 'bg-opacity-45 translate-x-0' : 'bg-opacity-0 -translate-x-full'">
       <TheCard
-          :show="showCard"
-          @close="showCard = false"
+          :show="show.card"
+          @close="show.card = false"
       />
     </div>
 
-    <SearchBar @close="showSearch = false" v-if="showSearch" />
+    <SearchBar @close="show.search = false" v-if="show.search" />
   </div>
 </template>
