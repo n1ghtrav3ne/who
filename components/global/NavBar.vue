@@ -3,7 +3,13 @@ const show=shallowReactive({
   nav:false,
   card:false,
   search:false,
-})
+});
+
+const search=ref("");
+
+const searchHandler=(value:string)=>{
+  console.log(value);
+}
 
 const openCard = () => {
   show.card = true;
@@ -78,6 +84,6 @@ const toggleNav = () => {
       />
     </div>
 
-    <SearchBar @close="show.search = false" v-if="show.search" />
+      <SearchBar v-model:show="show.search" v-model="search" @search="searchHandler" />
   </div>
 </template>
