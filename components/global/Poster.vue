@@ -1,16 +1,20 @@
 <script setup lang="ts">
 
-const props = defineProps(['img']);
-const isLoaded = ref(true);
+const props = defineProps({
+  img:{
+    type:String,
+    required:true
+  },
+  skeletonHeight:{
+    type:String,
+    default:'h-96'
+  }
+});
+const isLoaded = ref(false);
 const error = ref(false);
 
 const handleImageLoad = () => {
   isLoaded.value=true;
-};
-
-const handleImageError = () => {
-  isLoaded.value = false;
-  error.value=true;
 };
 </script>
 
@@ -18,14 +22,17 @@ const handleImageError = () => {
   <div class="relative flex w-full h-full">
 
     <NuxtImg
-        v-if="isLoaded"
+        v-show="isLoaded"
         class="w-full h-full object-cover"
         :src="props.img"
         alt=""
         @load="handleImageLoad"
     />
 
-    <div v-if="!isLoaded" class="absolute inset-0 h-32 bg-[rgba(0_0_0_.4)] animate-pulse rounded"></div>
+    
+    <div v-if="!isLoaded" :class="props.skeletonHeight" class="w-full bg-[rgba(0,0,0,.3)] animate-pulse rounded">
+
+    </div>
 
     <div v-if="$slots.default" class="absolute w-full h-full flex justify-center items-center">
       <slot />
