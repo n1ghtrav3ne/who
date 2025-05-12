@@ -23,10 +23,3 @@ html{
 .container{
     padding: 12px !important;
 }
-
-@font-face {
-    font-family: 'yekan-regular';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../font/yekanBakh/YekanBakhFaNum-Regular.woff) format('woff');
-}

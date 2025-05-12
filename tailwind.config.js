@@ -9,6 +9,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        custom:[
+          "yekan-black",
+          "yekan-black-extra",
+
+          "yekan-semi-bold",
+          "yekan-bold",
+          "yekan-bold-extra",
+
+          "yekan-thin",
+          "yekan-light",
+          "yekan-regular",
+        ]
+      },
       colors:{
         neutral:{
           50:"#f6f6f6",
