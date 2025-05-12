@@ -10,7 +10,7 @@
       <Icon icon="x" @click="$emit('close')" />
 
       <span class="text-2xl font-light">
-        WHO
+        <TheLogo />
       </span>
 
       <div class="flex flex-row items-center gap-[18px]">
