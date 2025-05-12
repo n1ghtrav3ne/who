@@ -12,7 +12,6 @@ import model2 from "assets/image/model2.png";
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 w-full">
       <poster :img="model" />
       <poster :img="model2" />
-      <poster :img="model" />
     </div>
 
     <div class="flex flex-col w-full items-center lg:w-1/5 mx-auto">
