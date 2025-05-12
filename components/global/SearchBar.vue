@@ -1,36 +1,81 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+const show=defineModel("show",{
+  type:Boolean,
+  default:false,
+  required:true
+});
 
-const router = useRouter()
+const model=defineModel("modelValue",{
+  type:String,
+  default:"",
+  required:true
+});
 
-const active = () => {
-  // Slight delay to ensure UI responds naturally
-  setTimeout(() => {
-    router.push('/category')
-  }, 300)
-  // Close the search component
-  emit('close')
-}
+const showInput=ref(false);
 
-const emit = defineEmits(['close'])
+const emit = defineEmits({
+  search:(value:string)=>{
+    return true
+  }
+});
+
+watch(show, (newValue) => {
+  if(newValue)
+  {
+    setTimeout(()=>{
+      showInput.value = newValue;
+    },50);
+  }
+});
+
+watch(showInput, (newValue) => {
+  if(!newValue)
+  {
+    setTimeout(()=>{
+      show.value=false;
+    },50);
+  }
+});
 </script>
 
 <template>
   <div
-      @click="(e: Event) => e.target === e.currentTarget ? $emit('close') : null"
-      class="fixed top-[45px] flex z-50 flex-col w-full h-screen bg-neutral-950 bg-opacity-45"
-      @keydown.enter="active"
-  >
-    <div class="px-4 py-3 w-full bg-white flex flex-row items-center">
+      @click.self="show=false"
+      class="fixed top-[45px] flex z-20 flex-col w-full h-screen bg-neutral-950 bg-opacity-45"
+      v-if="show"
+  ></div>
+  <Transition>
+    <div v-if="show" class="px-4 py-3 w-full fixed z-30 bg-white flex flex-row items-center">
       <div class="flex flex-row gap-2 items-center p-2 border-b border-b-neutral-950 w-full lg:w-1/3">
         <input
-            class="w-full outline-0"
-            type="text"
-            placeholder="جستجو محصولات"
+          v-model="model"
+          class="w-full outline-0"
+          type="text"
+          placeholder="جستجو محصولات"
+          @keyup.enter="$emit('search',model)"
         />
 
-        <Icon @click="active" icon="ArrowLeft" class="cursor-pointer" />
+        <Icon @click="$emit('search',model)" icon="ArrowLeft" class="cursor-pointer" />
       </div>
     </div>
-  </div>
+  </Transition>
 </template>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: transform .5s ease;
+}
+
+.v-enter-from,
+.v-leave-to
+{
+  transform:translateY(-50px);
+}
+
+.v-leave-from,
+.v-enter-to
+{
+  transform:translateY(0);
+}
+</style>
