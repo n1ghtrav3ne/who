@@ -5,13 +5,10 @@ import model2 from "assets/image/model2.png";
 
 <template>
   <div class="w-full h-auto flex flex-col gap-4">
-    <div class="w-full lg:hidden">
-      <Poster :img="model" />
-    </div>
-
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 w-full">
-      <poster :img="model" />
-      <poster :img="model2" />
+    <div class="grid grid-cols-6 gap-2 w-full">
+      <poster class="col-span-6 lg:col-span-2" :img="model" />
+      <poster class="col-span-3 lg:col-span-2" :img="model2" />
+      <poster class="col-span-3 lg:col-span-2" :img="model" />
     </div>
 
     <div class="flex flex-col w-full items-center lg:w-1/5 mx-auto">
