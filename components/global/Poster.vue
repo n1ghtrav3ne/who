@@ -29,9 +29,8 @@ const handleImageLoad = () => {
         @load="handleImageLoad"
     />
 
-    
-    <div v-if="!isLoaded" :class="props.skeletonHeight" class="w-full bg-[rgba(0,0,0,.3)] animate-pulse rounded">
-
+    <div v-if="!isLoaded" :class="skeletonHeight" class="w-full flex justify-center bg-neutral-200 items-center">
+      <div class="spinner"></div>
     </div>
 
     <div v-if="$slots.default" class="absolute w-full h-full flex justify-center items-center">
