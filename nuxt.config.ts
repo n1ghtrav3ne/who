@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     "~/assets/css/fonts.css",
   ],
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', "nuxt-swiper"],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', "nuxt-swiper", "@nuxt/image"],
 
   app:{
     head:{
