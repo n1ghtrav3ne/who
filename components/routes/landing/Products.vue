@@ -24,16 +24,14 @@ import model2 from "assets/image/model2.png";
       </span>
     </div>
 
-   <div class="flex flex-col lg:flex-row-reverse w-full h-fit gap-[26px]">
-      <span class="font-light text-[16px] lg:text-[32px] lg:w-[60%]">
+   <div class="grid grid-cols-5 lg:flex-row-reverse w-full h-fit gap-3 lg:gap-0">
+      <span class="font-light col-span-5 lg:col-span-2 text-[16px] text-justify lg:text-[32px]">
         اینجا فقط لباس نیست، اینجا جاییه که جسارت و خلاقیت، ترندها رو به استایل خاص تو تبدیل می‌کنن.
       </span>
 
-     <hr class="w-full bg-neutral-200 lg:hidden">
+     <hr class="w-full lg:w-[1px] col-span-5 lg:col-span-1 mx-auto lg:h-[100px] bg-neutral-200 lg:flex">
 
-     <hr class="w-[1px] hidden h-[100px] bg-neutral-200 lg:flex">
-
-     <span class="font-light text-[16px] lg:text-[32px]">
+     <span class="font-light col-span-5 lg:col-span-2 text-[16px] text-justify lg:text-[32px]">
       ما در “هو” بهترین تجربه خرید رو براتون رقم میزنیم!
      </span>
 
