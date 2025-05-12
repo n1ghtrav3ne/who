@@ -1,19 +1,3 @@
-<template>
-  <component
-      @mouseenter="isHovering = true"
-      @mouseleave="isHovering = false"
-      :size="size"
-      :weight="weight"
-      :is="iconComponent"
-      :style="{ fill: iconColor }"
-      :class="[
-      hasHover ? 'cursor-pointer' : '',
-      'transition-all duration-200 ease-in-out select-none',
-      colorClass
-    ]"
-  />
-</template>
-
 <script lang="ts">
 import { defineComponent, computed, ref } from "vue";
 import * as PhosphorIcons from "@phosphor-icons/vue";
@@ -88,3 +72,20 @@ export default defineComponent({
   },
 });
 </script>
+
+
+<template>
+  <component
+      @mouseenter="isHovering = true"
+      @mouseleave="isHovering = false"
+      :size="size"
+      :weight="weight"
+      :is="iconComponent"
+      :style="{ fill: iconColor }"
+      :class="[
+      hasHover ? 'cursor-pointer' : '',
+      'transition-all duration-200 ease-in-out select-none',
+      colorClass
+    ]"
+  />
+</template>
