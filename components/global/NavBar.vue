@@ -51,7 +51,7 @@ const toggleNav = () => {
     </div>
 
     <div @click="useRouter().push('/')" class="col-span-4 text-center cursor-pointer">
-      <NuxtImg class="inline-block m-auto" src="/logo.webp" alt="هو بوتیک" />
+      <TheLogo />
     </div>
 
     <div class="col-span-4 hidden md:flex justify-end gap-5">

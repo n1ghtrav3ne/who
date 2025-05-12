@@ -22,7 +22,7 @@
 
     <div class="flex justify-center text-2xl font-light pt-2 border-t border-neutral-200">
       <span>
-        WHO
+        <TheLogo />
       </span>
     </div>
 
