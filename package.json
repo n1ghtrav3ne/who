@@ -18,6 +18,7 @@
     "pinia": "^2.3.0",
     "sharp": "^0.34.1",
     "vue": "latest",
+    "vue-iconsax": "^2.0.0",
     "vue-router": "latest"
   },
   "devDependencies": {
