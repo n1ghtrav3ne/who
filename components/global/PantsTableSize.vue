@@ -7,7 +7,8 @@
     <div class="flex py-2 flex-col gap-2  px-2 bg-white">
       <Icon class="cursor-pointer" @click="$emit('close')" icon="x" />
       <span class="text-[20px] font-light">جدول سایزبندی شلوارها</span>
-      <img class="object-contain h-[600px]" src="/images/sizeTable.webp" />
+      <img class="object-contain h-[600px] hidden lg:flex" src="/images/sizeTable.webp" />
+      <img class="object-contain h-[600px] flex lg:hidden" src="/images/mobileSizeTable.webp" />
     </div>
   </div>
 </template>
