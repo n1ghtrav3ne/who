@@ -10,7 +10,16 @@ const detail=reactive(
     }
 )
 
+const emit=defineEmits(['close'])
+
 const number=ref(0)
+
+function transfer(){
+  setTimeout(() => {
+    useRouter().push('/card')
+  },300)
+  emit('close')
+}
 </script>
 
 <template>
@@ -78,7 +87,7 @@ const number=ref(0)
 
         </div>
 
-        <TheButton @click="useRouter().push('/card')" class="w-full" text="ادامه فرایند خرید" button-type="fill" size="lg" />
+        <TheButton @click="transfer" class="w-full" text="ادامه فرایند خرید" button-type="fill" size="lg" />
 
       </div>
 
