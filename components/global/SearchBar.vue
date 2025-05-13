@@ -2,13 +2,11 @@
 const show=defineModel("show",{
   type:Boolean,
   default:false,
-  required:true
 });
 
 const model=defineModel("modelValue",{
   type:String,
   default:"",
-  required:true
 });
 
 const showInput=ref(false);
@@ -36,16 +34,18 @@ watch(showInput, (newValue) => {
     },50);
   }
 });
+
 </script>
 
 <template>
   <div
+      @keydown.enter="$emit('search',model)"
       @click.self="show=false"
-      class="fixed top-[45px] flex z-20 flex-col w-full h-screen bg-neutral-950 bg-opacity-45"
+      class="fixed top-[45px] flex z-40 flex-col w-full h-screen bg-neutral-950 bg-opacity-45"
       v-if="show"
   ></div>
   <Transition>
-    <div v-if="show" class="px-4 py-3 w-full fixed z-30 bg-white flex flex-row items-center">
+    <div v-if="show" class="px-4 py-3 w-full fixed z-40 bg-white flex flex-row items-center">
       <div class="flex flex-row gap-2 items-center p-2 border-b border-b-neutral-950 w-full lg:w-1/3">
         <input
           v-model="model"
@@ -64,7 +64,7 @@ watch(showInput, (newValue) => {
 <style scoped>
 .v-enter-active,
 .v-leave-active {
-  transition: transform .5s ease;
+  transition: transform .3s ease;
 }
 
 .v-enter-from,

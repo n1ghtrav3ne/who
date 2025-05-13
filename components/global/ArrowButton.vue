@@ -1,14 +1,8 @@
 <script setup lang="ts">
 
-type TextSize="desktop"|"mobile"
-
 const props=defineProps({
   items:{
     type:Array,
-  },
-  size:{
-    type:String as ()=> TextSize,
-    default:"desktop"
   },
   text:String
 })
@@ -23,7 +17,7 @@ const active=()=>{
 <template>
   <div class="flex flex-col w-fit cursor-pointer select-none">
 
-    <div @click="active" class="flex flex-row items-center gap-1 text-sm" :class="{'text-xs':size==='mobile'}">
+    <div @click="active" class="flex flex-row items-center gap-1 text-xs lg:text-sm">
 
       <span>{{text}}</span>
 

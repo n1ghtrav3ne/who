@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import about from "assets/image/aboutImg.png"
 
 </script>
 
@@ -7,7 +6,7 @@ import about from "assets/image/aboutImg.png"
   <div class="flex flex-col gap-4">
 
     <div class="w-full h-[800px]">
-      <Poster :img="about">
+      <Poster img="/images/aboutImg.webp">
         <span class="text-[40px] lg:text-[64px] text-neutral-50 font-light w-full h-full items-center flex justify-center">درباره ما</span>
       </Poster>
     </div>

@@ -19,13 +19,10 @@ import Products from "~/components/routes/landing/Products.vue";
 
     <span class="text-[20px] font-light text-center lg:text-2xl">دسته بندی ها</span>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-8 h-[700px] overflow-y-auto">
-
-      <poster class="bg-center" :img="'/images/model1.png'" />
-      <poster class="bg-center" :img="'/images/model2.png'" />
-      <poster class="bg-center" :img="'/images/model1.png'" />
-
-
+    <div class="grid grid-cols-1 lg:grid-cols-3 w-full gap-8">
+      <poster class="bg-center" :img="'/images/model1.webp'" />
+      <poster class="bg-center" :img="'/images/landingExample2.webp'" />
+      <poster class="bg-center" :img="'/images/clothes.webp'" />
     </div>
 
   </div>

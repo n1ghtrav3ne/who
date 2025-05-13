@@ -8,18 +8,14 @@
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
-
-    <div class="flex pr-4 lg:hidden">
-      <FilterList />
-    </div>
+  <div class="flex flex-col gap-6 lg:gap-8">
 
     <div class="flex flex-row relative">
-      <Poster :img="female">
+      <poster img="/images/female.webp">
         <span class="text-[16px] lg:text-[32px] font-light text-neutral-50">Urban Style</span>
-      </Poster>
+      </poster>
 
-      <Poster :img="male">
+      <Poster img="/images/male.webp">
         <span class="text-[16px] lg:text-[32px] font-light text-neutral-50">Urban Style</span>
       </Poster>
 
@@ -32,18 +28,25 @@
 
     </div>
 
-    <div class="pr-4 hidden lg:flex">
+    <div class="flex flex-col gap-2 mr-6">
+      <BreadCrumbs size="sm" />
       <FilterList />
     </div>
 
     <div class="p-6 grid grid-cols-2 lg:grid-cols-4 gap-4 gap-y-8">
 
-      <ProductCard v-for="index in 4" :image="female" title="محصول مورد نظر کد" :code="1234" :available="true" :price="30000" :discount-price="15000" />
+      <ProductCard v-for="index in 4"
+                   :image="'/images/productImg.webp'"
+                   title="محصول مورد نظر کد"
+                   :code="1234"
+                   :available="true"
+                   :price="30000"
+                   :discount-price="15000" />
 
     </div>
 
     <div class="flex items-center flex-col w-full">
-      <ThePagination :count="8" :model-value="8"/>
+      <ThePagination :count="8" :model-value="1"/>
     </div>
 
   </div>

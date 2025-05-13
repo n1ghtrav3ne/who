@@ -78,7 +78,7 @@ import {use} from "h3";
     <div class="container flex gap-3 flex-row border-b text-sm w-full lg:w-[80%] lg:text-[16px]">
 
       <div class="w-[81px] h-[111px]">
-        <Poster :img="model" />
+        <Poster img="/images/productImg.webp" />
       </div>
 
       <div class="flex flex-col justify-between">

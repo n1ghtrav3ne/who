@@ -4,7 +4,7 @@ import ArrowButton from "~/components/global/ArrowButton.vue";
 </script>
 
 <template>
-  <div class="flex flex-row w-full items-center gap-4 text-xs relative mt-2 lg:text-sm">
+  <div class="flex flex-row w-full items-center gap-2 text-xs relative mt-2 lg:gap-4 lg:text-sm">
 
     <div class="flex flex-row items-center lg:items-start">
 
@@ -14,8 +14,11 @@ import ArrowButton from "~/components/global/ArrowButton.vue";
 
     </div>
 
-    <ArrowButton text="مرتب‌سازی بر اساس جدیدترین" />
+    <ArrowButton text="دسته بندی" />
 
+    <ArrowButton text="تعداد بازدید" />
+
+    <ArrowButton text="قیمت" />
 
   </div>
 </template>

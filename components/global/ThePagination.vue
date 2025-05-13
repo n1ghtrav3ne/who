@@ -73,7 +73,7 @@ const changeIndex=(i:number)=>{
                 @click="changeIndex(i)"
 
                 :class="{'bg-black text-white border-black':current==i}"
-                class="cursor-pointer border select-none flex justify-center items-center w-8 h-8 text-center border-[#E9EAEE] rounded-lg"
+                class="cursor-pointer duration-300 border select-none flex justify-center items-center w-8 h-8 text-center border-[#E9EAEE] rounded-lg"
             >
                 {{i}}
             </div>

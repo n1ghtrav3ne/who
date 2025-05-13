@@ -27,9 +27,8 @@ const props=defineProps({
   <div class="flex flex-row text-center w-fit items-center gap-2"
        :class="{'text-sm':size=='sm'}">
     <div>
-      <NuxtLink to="/public" class="flex flex-row items-center gap-2">
-        <Icon icon="house" />
-        <span>خانه</span>
+      <NuxtLink to="/">
+       خانه
       </NuxtLink>
     </div>
 

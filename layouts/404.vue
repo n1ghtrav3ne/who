@@ -9,9 +9,7 @@
     <TheButton @click="useRouter().push('/')" text="رفتن به صفحه اصلی" button-type="fill">
 
       <template #prefix>
-        <span class="material-symbols-outlined">
-        home
-        </span>
+        <Icon icon="house" />
       </template>
 
     </TheButton>

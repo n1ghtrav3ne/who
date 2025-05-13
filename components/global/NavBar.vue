@@ -1,49 +1,48 @@
 <script setup lang="ts">
-const show=shallowReactive({
-  nav:false,
-  card:false,
-  search:false,
-});
-
-const search=ref("");
-
-const searchHandler=(value:string)=>{
-  console.log(value);
-}
+const showNav = ref(false);
+const showCard = ref(false);
+const showSearch = ref(false);
+const showCategory=ref(false)
 
 const openCard = () => {
-  show.card = true;
-  show.search = false;
-  show.nav = false;
+  showCard.value = true;
+  showSearch.value = false;
+  showNav.value = false;
+  showCategory.value = false;
 };
 
 const openSearch = () => {
-  show.search = !show.search;
-  show.card = false;
-  show.nav = false;
+  showSearch.value = !showSearch.value;
+  showCard.value = false;
+  showNav.value = false;
+  showCategory.value = false;
 };
 
 const toggleNav = () => {
-  show.nav = !show.nav;
-  if (show.nav) {
-    show.card = false;
-    show.search = false;
+  showNav.value = !showNav.value;
+  if (showNav.value) {
+    showCard.value = false;
+    showSearch.value = false;
+    showCategory.value = false;
   }
 };
 
+const openCategory=()=>{
+  showCategory.value = !showCategory.value;
+}
 </script>
 
 <template>
-  <div class="bg-white fixed z-50 top-0 w-full shadow-md grid grid-cols-12 items-center gap-2 py-4 px-3">
+  <div class="bg-white select-none shadow fixed z-50 top-0 w-full grid grid-cols-12 items-center gap-2 py-4 px-3">
     <div class="col-span-4 hidden md:flex gap-5">
       <div>
         <NuxtLink class="cursor-pointer" href="/collection">کالکشن</NuxtLink>
       </div>
       <div>
-        <NuxtLink class="cursor-pointer" href="/category">دسته بندی</NuxtLink>
+        <span @click="openCategory" class="cursor-pointer">دسته بندی</span>
       </div>
       <div>
-        <span class="cursor-pointer select-none" @click="openSearch">جستجو</span>
+        <span class="cursor-pointer" @click="openSearch">جستجو</span>
       </div>
     </div>
 
@@ -52,9 +51,9 @@ const toggleNav = () => {
       <NavMenu
           @search="openSearch"
           @card="openCard"
-          @close="show.nav = false"
+          @close="showNav = false"
           class="duration-300"
-          :class="show.nav ? 'translate-x-0' : 'translate-x-full'"
+          :class="showNav ? 'translate-x-0' : 'translate-x-full'"
       />
     </div>
 
@@ -75,15 +74,22 @@ const toggleNav = () => {
 
   <div class="pt-[55px]">
 
-    <div @click="show.card=false"
-         class="fixed flex flex-row-reverse bg-neutral-400 w-full h-screen z-50 top-0 bg-opacity-40"
-         :class="show.card ? 'bg-opacity-45 translate-x-0' : 'bg-opacity-0 -translate-x-full'">
+    <div @click.self="showCard=false" class="fixed flex flex-row-reverse bg-neutral-400 w-full h-screen z-50 top-0 bg-opacity-40"
+         :class="showCard ? 'bg-opacity-45 translate-x-0' : 'bg-opacity-0 -translate-x-full'">
       <TheCard
-          :show="show.card"
-          @close="show.card = false"
+          :show="showCard"
+          @close="showCard = false"
       />
     </div>
 
-      <SearchBar v-model:show="show.search" v-model="search" @search="searchHandler" />
+    <SearchBar @search="useRouter().push('/category')"
+               :show="showSearch"
+               @close="showSearch = false"
+                />
+
+    <TheCategory @close="showCategory=false"
+                 :class="showCategory ? 'translate-y-0 duration-300' : '-translate-y-full duration-300'"
+    />
+
   </div>
 </template>

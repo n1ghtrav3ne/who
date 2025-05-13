@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import model from "~/assets/image/productImg.jpg"
-
 const number=ref(0)
 </script>
 
@@ -28,7 +26,7 @@ const number=ref(0)
         <div class="flex flex-row gap-2 col-span-2 items-center">
 
           <div class="w-[80px] h-[119px]">
-            <Poster :img="model" />
+            <poster img="/images/productImg.webp" />
           </div>
 
           <div class="flex flex-col gap-2">

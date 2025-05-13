@@ -28,13 +28,14 @@ const toggleButton = () => {
       }"
     >
       <!-- Checkmark -->
-      <span
+      <Icon
+          icon="check"
           v-if="isChecked"
           class="material-symbols-rounded text-lg font-bold"
           :class="{ 'text-white': isChecked }"
       >
         check
-      </span>
+      </Icon>
     </div>
 
     <!-- Label -->

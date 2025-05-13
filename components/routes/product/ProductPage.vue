@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import image1 from "assets/image/image1.jpg";
-import image2 from "assets/image/image2.jpg";
-import image3 from "assets/image/image3.jpg";
-import img from "~/assets/image/productImg.jpg"
+import image1 from "/images/image1.webp";
+import image2 from "/images/image2.webp";
+import image3 from "/images/image3.webp";
 import Detail from "~/components/routes/product/Detail.vue";
 import ProductCard from "~/components/global/ProductCard.vue";
 
 const items = ref([image1, image2, image3]);
+
+const sizeTable=ref(false)
 
 const containerRef = ref(null);
 
@@ -19,6 +20,7 @@ const swiper = useSwiper(containerRef, {
   },
 
 });
+
 </script>
 
 <template>
@@ -41,7 +43,7 @@ const swiper = useSwiper(containerRef, {
 
         <BreadCrumbs />
 
-        <Detail :available="true" />
+        <Detail @show="sizeTable=true" :available="true" />
 
       </div>
 
@@ -53,7 +55,7 @@ const swiper = useSwiper(containerRef, {
     <div class="grid grid-cols-2 gap-4 px-4 lg:grid-cols-4 lg:gap-8">
 
       <ProductCard v-for="index in 4"
-                   :image="img"
+                   :image="'/images/productImg.webp'"
                    title="محصول مورد نظر کد"
                    :code="1234"
                    :available="true"
@@ -63,4 +65,7 @@ const swiper = useSwiper(containerRef, {
     </div>
 
   </div>
+
+  <PantsTableSize @close="sizeTable=false"
+                  v-if="sizeTable" />
 </template>

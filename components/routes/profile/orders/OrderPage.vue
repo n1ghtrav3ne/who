@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import model from "~/assets/image/model1.png"
 import ProcessStatus from "~/components/routes/profile/orders/ProcessStatus.vue";
 
 const items=reactive(['جاری','تحویل شده','مرجوع شده'])
@@ -28,7 +27,7 @@ const toggleIndex=(index:number)=>{
 
     </div>
 
-    <div @click="useRouter().push('/order-detail/1')" v-if="available" v-for="item in 3" class="container flex flex-col gap-3 border-b">
+    <NuxtLink to="/order-detail/1" v-if="available" v-for="item in 3" class="container flex flex-col gap-3 border-b">
 
       <div class="flex flex-row justify-between w-full text-sm lg:text-[16px]">
 
@@ -40,7 +39,7 @@ const toggleIndex=(index:number)=>{
 
       <div class="flex flex-row w-full text-sm lg:text-[16px]">
 
-        <ProcessStatus status="returned" />
+        <ProcessStatus status="delivered" />
 
         <span class="text-sm text-neutral-400 w-full lg:text-[16px]">
         ۲۹ بهمن ۱۴۰۳
@@ -51,12 +50,12 @@ const toggleIndex=(index:number)=>{
       <div class="flex gap-4 flex-nowrap overflow-x-auto w-full">
 
         <div v-for="item in 2" class="w-[56px] h-[76px] flex-shrink-0">
-          <Poster :img="model" alt="image" />
+          <Poster img="/images/productImg.webp" alt="image" />
         </div>
 
       </div>
 
-    </div>
+    </NuxtLink>
 
     <span v-else
           class="text-[20px] text-neutral-950 font-light mx-auto mt-[20%]"

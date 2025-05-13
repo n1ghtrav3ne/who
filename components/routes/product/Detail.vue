@@ -1,21 +1,20 @@
 <script setup lang="ts">
-const number=ref(0)
+import ColorPicker from "~/components/global/ColorPicker.vue";
 
-const properties=ref(['مشخصات محصول','سایز ها','جنس محصول'])
+const number=ref(0)
 
 const props=defineProps({
   available:Boolean
 })
 
+const isFavorite = ref(false)
+
+function toggleFavorite() {
+  isFavorite.value = !isFavorite.value
+}
+
 const selectedSize = ref('')
 
-const items=reactive([
-  {size:'M',height:'100cm',width:'100cm'},
-  {size:'L',height:'100cm',width:'100cm'},
-  {size:'XL',height:'100cm',width:'100cm'},
-  {size:'XXL',height:'100cm',width:'100cm'},
-  {size:'100cm',height:'100cm',width:'100cm'},
-])
 </script>
 
 <template>
@@ -27,11 +26,14 @@ const items=reactive([
         پافر کد ۱۲۳۴
       </span>
 
-      <TheButton text="افزودن به مورد علاقه">
-        <template #suffix>
-          <Icon icon="heart" />
-        </template>
-      </TheButton>
+     <div @click="toggleFavorite" class="flex flex-row select-none items-center gap-1 text-xs text-neutral-500 cursor-pointer">
+       <span :class="isFavorite ? 'text-neutral-950' : 'text-neutral-500'">افزودن به مورد علاقه</span>
+       <Icon
+           icon="heart"
+           :color="isFavorite ? '#ef4444' : '#737373'"
+            :filled="isFavorite"
+       />
+     </div>
 
     </div>
 
@@ -47,9 +49,11 @@ const items=reactive([
           </template>
         </TheSelect>
 
-        <TheLink text="راهنمای سایز" />
+        <span @click="$emit('show')" class="text-[#115EA3] text-sm cursor-pointer underline underline-offset-8">راهنمای سایز</span>
 
       </div>
+
+      <ColorPicker />
 
       <span class="text-[16px] font-light">
       ۱,400,000 تومان
@@ -71,38 +75,19 @@ const items=reactive([
 
     </div>
 
-      <OpeningButton text="مشخصات" :items="properties">
-
-        <div class="flex flex-col w-[300px] lg:w-[400px]">
-
-          <div class="bg-gray-200 px-6 py-3 flex flex-row justify-between border-b border-b-gray-200 text-sm font-light text-gray-500">
-
-            <span>سایز</span>
-
-            <span>قد کار</span>
-
-            <span>عرض شانه</span>
-
-          </div>
-
-          <div v-for="(item,index) in items"
-               :key="index"
-               class="flex flex-row w-full py-4 px-6 text-gray-500 justify-between border-b border-b-gray-200">
-
-            <span>{{item.size}}</span>
-
-            <span>{{item.height}}</span>
-
-            <span>{{item.width}}</span>
-
-          </div>
-
+      <OpeningButton text="مشخصات">
+        <div class="flex flex-col gap-2 text-sm">
+          <span>جنس:</span>
+          <p>پارچه کتان با ترکیب ۹۵٪ کتان و ۵٪ الاستین (کشی) - نرم، بادوام و کمی کش‌دار برای راحتی بیشتر.</p>
         </div>
 
+        <div class="flex flex-col gap-2 text-sm">
+          <span>نحوه شست‌وشو:</span>
+          <p>شست‌وشو با دست یا ماشین لباسشویی در دمای حداکثر ۳۰ درجه سانتی‌گراد، از سفیدکننده استفاده نشود، اتوکشی با دمای پایین (حداکثر ۱۱۰ درجه)، خشک‌شویی مجاز است، برای حفظ کیفیت، شلوار را پشت‌ورو کنید و با رنگ‌های مشابه بشویید.</p>
+        </div>
       </OpeningButton>
 
     </div>
-
 
     <TheButton v-else
                class="w-full lg:w-fit" text="موجود شد به من اطلاع بده"
@@ -114,6 +99,5 @@ const items=reactive([
       </template>
 
     </TheButton>
-
   </div>
 </template>

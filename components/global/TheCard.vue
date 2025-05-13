@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Img from "~/assets/image/productImg.jpg"
 
 const prop=defineProps(['show'])
 
@@ -22,14 +21,14 @@ const number=ref(0)
 
       <span class="text-[32px] font-bold container">سبد خرید</span>
 
-      <div class="container flex flex-col gap-10 pb-10 h-[40%] w-full overflow-y-auto border-b border-b-neutral-200">
+      <div class="container flex flex-col gap-10 pb-10 h-auto w-full overflow-y-auto border-b border-b-neutral-200">
 
         <div v-for="index in 2" class="grid grid-cols-3 w-full gap-4">
 
           <div class="flex flex-row gap-2 col-span-2">
 
             <div class="w-[80px] h-[119px]">
-              <Poster :img="'/images/productImg.jpg'" />
+              <Poster :img="'/images/productImg.webp'" />
             </div>
 
             <div class="flex flex-col gap-2 text-sm">

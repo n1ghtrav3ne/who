@@ -26,7 +26,7 @@ const number=ref(0)
           <div class="flex flex-row gap-2">
 
             <div class="w-[80px] h-[119px]">
-              <Poster :img="model" />
+              <poster img="/images/productImg.webp" />
             </div>
 
             <div class="flex flex-col gap-2">
