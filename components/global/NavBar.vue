@@ -33,7 +33,12 @@ const openCategory=()=>{
 </script>
 
 <template>
-  <div class="bg-white select-none shadow fixed z-50 top-0 w-full grid grid-cols-12 items-center gap-2 py-4 px-3">
+  <div
+      :class="[
+        'bg-white select-none fixed z-50 top-0 w-full grid grid-cols-12 items-center gap-2 py-4 px-3 transition-shadow duration-300',
+        showSearch ? '' : 'shadow'
+      ]"
+  >
     <div class="col-span-4 hidden md:flex gap-5">
       <div>
         <NuxtLink class="cursor-pointer" href="/collection">کالکشن</NuxtLink>
