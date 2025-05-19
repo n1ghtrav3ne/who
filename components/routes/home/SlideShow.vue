@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import image1 from "assets/image/image1.jpg"
+import image1 from "/images/image1.webp"
 
-import image2 from "assets/image/image2.jpg"
+import image2 from "/images/image2.webp"
 
-import image3 from "assets/image/image3.jpg"
+import image3 from "/images/image3.webp"
 
-import slide from "assets/image/slide.jpg"
+import slide from "/images/slide.webp"
 
-import slide2 from "assets/image/aboutImg.png"
+import slide2 from "/images/aboutImg.webp"
 
 type hero ="hero1"|"hero2"
 

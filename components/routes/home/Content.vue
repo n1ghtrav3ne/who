@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import shoe from "assets/image/shoe.jpg"
+import shoe from "/images/shoe.webp"
 
-import clothes from "assets/image/clothes.jpg"
+import clothes from "/images/clothes.webp"
 
-import pants from "assets/image/pants.jpg"
+import pants from "/images/pants.webp"
 
 </script>
 

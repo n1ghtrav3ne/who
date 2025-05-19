@@ -15,7 +15,7 @@
               فرصت رو از دست نده، همین حالا خرید کن!
             </span>
 
-            <NuxtLink to="/collection" class="flex flex-row items-center w-fit gap-2 px-3 py-2 border border-neutral-50 cursor-pointer">
+            <NuxtLink to="/home" class="flex flex-row items-center w-fit gap-2 px-3 py-2 border border-neutral-50 cursor-pointer">
               <span class="text-sm">مشاهده تخفیفات</span>
               <span class="material-symbols-outlined">
                 <VsxIcon iconName="ArrowLeft" />

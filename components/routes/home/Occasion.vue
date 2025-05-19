@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
-import male from "assets/image/male.jpg"
+import male from "/images/male.webp"
 
-import female from "assets/image/female.jpg"
+import female from "/images/female.webp"
 
 </script>
 
