@@ -38,7 +38,7 @@ const swiper = useSwiper(containerRef, {
 
       <swiper-slide>
 
-        <div class="h-[800px]">
+        <div @click="useRouter().push('/collection')" class="h-[800px]">
           <Poster :img="slide">
             <span class="text-[40px] lg:text-[64px] text-neutral-50 font-light w-full h-full items-center flex justify-center">کالکشن جدید ۲۰۲۵</span>
           </Poster>
@@ -48,7 +48,7 @@ const swiper = useSwiper(containerRef, {
 
       <swiper-slide>
 
-        <div class="h-[800px]">
+        <div @click="useRouter().push('/collection')" class="h-[800px]">
           <Poster :img="slide2">
             <span class="text-[40px] lg:text-[64px] text-neutral-50 font-light w-full h-full items-center flex justify-center">کالکشن جدید ۲۰۲۵</span>
           </Poster>

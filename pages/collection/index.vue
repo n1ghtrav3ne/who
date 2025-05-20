@@ -1,7 +1,7 @@
 <template>
-  <CollectionPage />
+  <page />
 </template>
 
 <script setup lang="ts">
-import CollectionPage from "~/components/routes/collection/CollectionPage.vue";
+import Page from "~/components/routes/landing/Page.vue";
 </script>

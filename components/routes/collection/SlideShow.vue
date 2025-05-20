@@ -1,7 +1,5 @@
 <script setup lang="ts">
 
-import CollectionImg from "~/assets/image/collectionImg.png"
-
 const containerRef = ref(null)
 
 const swiper = useSwiper(containerRef, {

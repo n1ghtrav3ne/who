@@ -11,7 +11,7 @@
     </div>
 
     <div class="flex flex-col w-full items-center lg:w-1/5 mx-auto">
-      <NuxtLink to="/collection" class="flex justify-center w-full items-center bg-neutral-950 text-white px-5 py-2 text-sm">
+      <NuxtLink to="/events" class="flex justify-center w-full items-center bg-neutral-950 text-white px-5 py-2 text-sm">
         مشاهده کالکشن ها!
       </NuxtLink>
       <span class="material-symbols-rounded text-[40px] font-bold cursor-pointer">
